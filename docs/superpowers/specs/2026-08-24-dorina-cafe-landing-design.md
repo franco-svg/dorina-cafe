@@ -1,135 +1,213 @@
 # Dorina Café landing — diseño aprobado
 
-Fecha: 2026-08-24  
-Estado: aprobado y revisado por el usuario  
-Proyecto previsto: `D:\Devs\dorinacafe\dorina-cafe`
+Fecha: 2026-08-24
+
+Estado: brief aprobado; pendiente de revisión final de la especificación escrita
+
+Proyecto destino: `D:\Devs\dorina-cafe`
 
 ## Objetivo
 
-Adaptar la plantilla `https://github.com/franco-svg/Test_landing.git` para Dorina Café sin alterar su arquitectura general, orden de secciones ni configuración de build. La landing debe presentar la propuesta gastronómica, facilitar el acceso al menú, WhatsApp y las dos sucursales, y usar imágenes oficiales del comercio autorizadas por el usuario. Solo se modificarán los cinco componentes o contratos autorizados para resolver limitaciones confirmadas del template.
+Adaptar la aplicación existente, basada en `https://github.com/franco-svg/Test_landing.git`, para Dorina Café. La landing debe presentar la propuesta gastronómica real, facilitar el acceso al menú y WhatsApp, y ofrecer indicaciones independientes para las sucursales de Palermo y Villa Urquiza.
 
-No se publicará, no se hará push y no se configurará hosting.
+La implementación conservará React, TypeScript, Vite, Tailwind CSS, el orden general de secciones y la configuración de build. No se publicará, no se hará push y no se configurará hosting.
 
-## Fuentes y evidencia
+## Fuentes aprobadas
 
-- Instagram vigente: `https://www.instagram.com/dorina.cafe/?hl=es`.
-- WhatsApp: `https://wa.me/5491130014605`.
-- Menú: `https://monline.com.ar/DorinaCafe`.
+- Instagram oficial vigente: `https://www.instagram.com/dorina.cafe/?hl=es`.
+- WhatsApp aportado por el usuario: `https://wa.me/5491130014605`.
+- Menú enlazado desde el perfil oficial: `https://monline.com.ar/DorinaCafe`.
 - Palermo: `https://maps.app.goo.gl/gpYkqomR3pMLu2CB6`.
 - Villa Urquiza: `https://maps.app.goo.gl/YW5y63X1NykVK8NJ9`.
-- El usuario autorizó el uso de imágenes oficiales publicadas por `@dorina.cafe`.
+- Imágenes publicadas por el perfil oficial `@dorina.cafe`, cuyo uso en esta landing fue aprobado por el usuario.
 
-Los enlaces antiguos a `@dorinacafe` se consideran desactualizados porque ese perfil no está disponible. Se usará únicamente `@dorina.cafe`.
+El perfil actual y verificado es `@dorina.cafe`. Google Maps conserva un enlace antiguo a `@dorinacafe`; la landing usará exclusivamente el perfil vigente aportado por el usuario.
+
+## Dirección visual
+
+Se aplicará un enfoque editorial gastronómico con fotografías oficiales: comida real como protagonista, tipografía amplia, fondos crema, tonos de madera y acentos verdes. La plantilla mantendrá su composición actual.
+
+Las fotografías disponibles desde Instagram tienen entre 361 y 480 píxeles de ancho y 640 píxeles de alto. Son adecuadas para tarjetas y galería. En el hero se usará la foto de mesa con la superposición oscura ya incluida por la plantilla para reducir la percepción del escalado; la revisión de escritorio deberá confirmar que el resultado sea aceptable. Si no lo es, se elegirá otra foto oficial disponible sin generar ni inventar contenido.
 
 ## Identidad y contenido
 
-El nombre será **Dorina Café**. La descripción se limitará a café de especialidad, pastelería artesanal, desayunos, brunch y almuerzos. El tono será cálido, sencillo y urbano, sin inventar historia fundacional, trayectoria, certificaciones ni disponibilidad permanente.
+El nombre será **Dorina Café**. La descripción se limitará a café de especialidad, pastelería artesanal, desayunos, brunch, almuerzos y propuestas dulces y saladas. No se afirmará una historia fundacional, antigüedad, certificación ni disponibilidad permanente no documentada.
 
-Hero propuesto:
+El tono será cálido, urbano y directo.
 
-- Título: “Café de especialidad, pastelería artesanal y mucho más”.
-- Subtítulo: “Desayunos, brunch y almuerzos para disfrutar en Palermo y Villa Urquiza”.
-- CTA principal: WhatsApp, dentro de la jerarquía prevista por la plantilla.
-- CTA secundario: menú completo.
+Hero:
 
-Presentación propuesta:
+- título: “Café de especialidad, pastelería artesanal y mucho más”;
+- subtítulo: “Desayunos, brunch y almuerzos para disfrutar en Palermo y Villa Urquiza”;
+- el hero conservará la composición tipográfica y fotográfica de la plantilla;
+- los CTA “Cómo llegar”, “Ver menú” y WhatsApp aparecerán en las secciones de sucursales y contacto previstas por la plantilla.
+
+Presentación:
 
 > Dorina reúne café de especialidad, pastelería artesanal y platos para disfrutar durante todo el día en dos rincones de Buenos Aires.
 
-Los productos destacados serán Flat White, Avocado Toast, Cheesecake de frutos rojos, Croissant con almendras, Brunch Roma y Limonada casera. Las tarjetas mostrarán nombre, descripción e imagen, **sin precios**. El menú externo conservará la información comercial actualizada.
+Productos destacados, sin precios:
 
-Los diferenciales serán café de especialidad, pastelería artesanal, brunch disponible todo el día, propuesta dulce y salada, dos sucursales y opciones puntuales veganas, vegetarianas o sin TACC. No se afirmará que toda la carta cubre esas categorías.
+1. Flat White — dos shots de espresso con leche emulsionada.
+2. Avocado Toast — masa madre, palta, huevo poché, tomates cherry, praliné de nueces y lima.
+3. Cheesecake de frutos rojos — sujeto a disponibilidad.
+4. Croissant con almendras — parte de la selección de pastelería artesanal.
+5. Brunch Roma — dos infusiones, tostadas, huevos revueltos, panceta, queso crema, medialuna y cookie.
+6. Limonada casera — con menta y jengibre.
+
+Diferenciales:
+
+- café de especialidad;
+- pastelería artesanal;
+- brunch disponible todo el día;
+- propuesta dulce y salada;
+- dos sucursales;
+- opciones puntuales vegetarianas, veganas o sin TACC identificadas en el menú.
+
+No se afirmará que toda la carta cubre las categorías alimentarias especiales.
+
+## Reseñas
+
+La sección mostrará dos reseñas públicas verificadas en los enlaces de Google Maps aportados por el usuario. Se conservará el sentido mediante una paráfrasis breve, sin combinar opiniones.
+
+- Carolina Blanco, 5 estrellas, Villa Urquiza: destaca las medialunas, el chocolate caliente, la variedad y la atención.
+- Nicolas Guichot, 5 estrellas, Palermo: destaca el ambiente acogedor, cálido y tranquilo y las porciones abundantes.
+
+Los nombres, puntuaciones y sucursal se conservarán para mantener la atribución.
 
 ## Datos operativos
 
-- Palermo: Nicaragua 4816, C1414, CABA.
-- Villa Urquiza: Av. Triunvirato 5600, C1431, CABA.
-- WhatsApp: `+54 9 11 3001-4605` mediante `https://wa.me/5491130014605`.
+### Palermo
+
+- Dirección: Nicaragua 4816, C1414, CABA.
+- Horarios: lunes a viernes de 8:30 a 20:00; sábados y domingos de 9:30 a 20:00.
+- Maps: `https://maps.app.goo.gl/gpYkqomR3pMLu2CB6`.
+
+### Villa Urquiza
+
+- Dirección: Av. Triunvirato 5600, C1431, CABA.
+- Horarios: lunes a viernes de 8:30 a 20:00; sábados y domingos de 9:00 a 20:00.
+- Maps: `https://maps.app.goo.gl/YW5y63X1NykVK8NJ9`.
+
+### Contacto común
+
+- WhatsApp visible: `+54 9 11 3001-4605`.
+- WhatsApp URL: `https://wa.me/5491130014605`.
 - Instagram: `@dorina.cafe`.
-- El único horario verificado para ambas sucursales es lunes de 8:30 a 20:00.
-- Los demás horarios y el teléfono convencional se omitirán.
+- Menú: `https://monline.com.ar/DorinaCafe`.
+- Teléfono convencional: se omite porque no fue encontrado en las fuentes aprobadas.
 
-Cada sucursal tendrá su enlace de Google Maps correspondiente. No se mezclarán ambas direcciones en un único enlace.
+## Secciones
 
-## Arquitectura y superficies editables
+La navegación y el footer usarán estos destinos:
 
-La implementación conservará React, TypeScript, Vite y Tailwind CSS. Antes de editar se comprobará la estructura recién clonada contra el mapa de plantilla de la skill.
+1. Inicio.
+2. Favoritos.
+3. Nuestra propuesta.
+4. Presentación.
+5. Galería.
+6. Opiniones.
+7. Sucursales.
+8. Contacto.
 
-Los cambios de contenido se limitarán a:
-
-- `src/config/siteConfig.ts`: identidad, SEO, hero, presentación, contacto, secciones y enlaces.
-- `src/data/products.ts`: seis productos sin precios.
-- `src/data/benefits.ts`: diferenciales respaldados.
-- `src/data/gallery.ts`: inventario de imágenes oficiales.
-- `src/data/testimonials.ts`: sin testimonios ficticios.
-- `src/index.css`: únicamente los nueve tokens de color existentes.
-- `public/images/`: imágenes oficiales optimizadas.
-
-La inspección del template confirmó tres incompatibilidades con el brief: solo admite una sucursal, siempre muestra un teléfono y siempre renderiza testimonios. El usuario autorizó una ampliación mínima para modificar `src/types/index.ts`, `src/App.tsx`, `src/components/sections/Location.tsx`, `src/components/sections/Contact.tsx` y `src/components/layout/Footer.tsx`. Esos cambios solo permitirán dos sucursales, teléfono opcional, testimonios vacíos y la eliminación del crédito ficticio. No se modificará la configuración de build ni se rediseñarán otros componentes.
-
-## Tratamiento de testimonios y crédito
-
-No hay reseñas textuales verificables con autor. `testimonials` quedará sin contenido inventado y `App.tsx` no renderizará la sección cuando el arreglo esté vacío.
-
-El usuario pidió eliminar por completo el crédito “Sitio desarrollado por” porque todavía no dispone de una landing propia. Se eliminarán también los campos `developer`, `Tu Marca` y `example.com` para no dejar datos ficticios ni enlaces vacíos.
+La sección de sucursales mostrará una tarjeta por sede con dirección, horario propio y enlace de Maps independiente. No se mezclará información de ambas sedes en un único enlace.
 
 ## Recursos visuales
 
-Se seleccionarán fotos oficiales de `@dorina.cafe` para hero, presentación, productos y galería. Cada imagen se asociará a un producto solo cuando este resulte identificable. Los recortes previstos serán horizontal para hero, editorial para presentación y cuadrados o verticales para productos y galería.
+| Archivo final | Publicación oficial | Uso | Texto alternativo |
+|---|---|---|---|
+| `hero-dorina.jpg` | `https://www.instagram.com/dorina.cafe/reel/DbLc4xrRCti/` | Hero y galería | Mesa de Dorina Café con platos dulces y salados. |
+| `cafe-avocado.jpg` | `https://www.instagram.com/dorina.cafe/p/DbeEPiflCPa/` | Flat White, Avocado Toast y galería | Avocado toast con huevo poché y una taza de café. |
+| `almuerzos.jpg` | `https://www.instagram.com/dorina.cafe/p/DcEK0w0lnWp/` | Presentación, limonada y galería | Tres platos salados de Dorina Café sobre una mesa de madera. |
+| `cheesecake.jpg` | `https://www.instagram.com/dorina.cafe/reel/Dbay61qxk3C/` | Cheesecake y galería | Cheesecake de frutos rojos decorado con frutos y flores. |
+| `mesa-brunch.jpg` | `https://www.instagram.com/dorina.cafe/reel/DcL4oVnBj8a/` | Brunch y galería | Mesa con mbejú, tostado y porciones de torta. |
+| `croissant-salado.jpg` | `https://www.instagram.com/dorina.cafe/reel/DbYKfVdhRPV/` | Galería | Croissant salado con jamón y queso fundido. |
 
-Antes de usar cada recurso se comprobarán resolución, encuadre y peso. Se mantendrá trazabilidad de URL de origen, función, archivo final y texto alternativo. No se usarán imágenes de terceros ni se generarán imágenes con IA.
-
-Archivos previstos:
-
-- `hero-dorina.jpg`
-- `cafe-avocado.jpg`
-- `almuerzos.jpg`
-- `cheesecake.jpg`
-- `mesa-brunch.jpg`
-- `croissant-salado.jpg`
+No se usarán imágenes de terceros ni imágenes generadas con IA. Se guardará un registro de procedencia dentro de `public/images/SOURCES.md`.
 
 ## Paleta
 
-Los valores se escribirán como canales RGB separados por espacios:
+Los valores se expresarán como canales RGB separados por espacios:
 
-| Token | RGB | Función |
-|---|---:|---|
-| `--color-cream` | `247 242 232` | Fondo principal |
-| `--color-linen` | `238 228 214` | Fondo secundario |
-| `--color-parchment` | `216 197 175` | Superficies y bordes |
-| `--color-coffee` | `122 81 56` | Marca secundaria |
-| `--color-espresso` | `43 27 22` | Fondos oscuros |
-| `--color-forest` | `53 72 59` | Acción principal |
-| `--color-sage` | `166 175 149` | Acento suave |
-| `--color-copper` | `184 97 59` | Acento y foco |
-| `--color-ink` | `21 19 17` | Texto principal |
+| Token | RGB | Origen | Función |
+|---|---:|---|---|
+| `--color-cream` | `247 242 232` | Observado | Fondo principal |
+| `--color-linen` | `238 228 214` | Ajuste funcional | Fondo secundario |
+| `--color-parchment` | `216 197 175` | Observado | Superficies y bordes |
+| `--color-coffee` | `122 81 56` | Observado | Marca secundaria |
+| `--color-espresso` | `43 27 22` | Observado | Fondos oscuros |
+| `--color-forest` | `53 72 59` | Observado | Acción principal |
+| `--color-sage` | `166 175 149` | Ajuste funcional | Acento suave |
+| `--color-copper` | `184 97 59` | Observado | Acento y foco |
+| `--color-ink` | `21 19 17` | Ajuste funcional | Texto principal |
 
-## Manejo de faltantes e incompatibilidades
+## Arquitectura y superficies editables
+
+El contenido seguirá centralizado en los contratos existentes:
+
+- `src/config/siteConfig.ts`;
+- `src/data/products.ts`;
+- `src/data/benefits.ts`;
+- `src/data/gallery.ts`;
+- `src/data/testimonials.ts`;
+- los nueve tokens de `src/index.css`;
+- recursos dentro de `public/images/`.
+
+La plantilla solo admite una dirección, un horario compartido y un teléfono obligatorio. El usuario aprobó una ampliación mínima para modificar:
+
+- `src/types/index.ts`: agregar un contrato de sucursal con horario propio, un texto visible independiente para WhatsApp y un teléfono convencional opcional; eliminar el horario global y el contrato de crédito ficticio;
+- `src/components/sections/Location.tsx`: renderizar dos sucursales y horarios propios;
+- `src/components/sections/Contact.tsx`: omitir teléfono convencional y agregar el acceso al menú;
+- `src/components/layout/Footer.tsx`: mostrar ambas direcciones y retirar el crédito ficticio.
+- `src/App.tsx`: dejar de pasar el horario global y el crédito eliminados; conservar el orden de secciones.
+
+Cada sucursal tendrá `id`, `name`, `address`, `mapsUrl` y `schedule`. El contacto común tendrá `whatsappLabel`, `whatsappUrl`, `instagramHandle`, `instagramUrl`, `menuUrl` y un `phone` opcional. Los componentes de ubicación y footer consumirán directamente los horarios de cada sucursal, sin duplicar ni combinar valores.
+
+No se modificarán otros componentes ni la configuración de build salvo que una incompatibilidad comprobada exija una nueva aprobación de alcance.
+
+## Crédito
+
+Se eliminarán `Tu Marca`, `example.com` y el bloque “Sitio desarrollado por”. No se inventará un reemplazo.
+
+## Estado del proyecto
+
+- Raíz: `D:\Devs\dorina-cafe`.
+- Rama: `feat/dorina-cafe-dev`.
+- Remoto de destino: `origin -> https://github.com/franco-svg/dorina-cafe.git`.
+- Fuente de plantilla en modo lectura: `https://github.com/franco-svg/Test_landing.git`.
+- El repositorio ya contiene la aplicación base y no requiere importar otro árbol de trabajo.
+- El worktree estaba limpio al aprobarse el brief.
+
+Los documentos previos del repositorio contienen una ruta de proyecto antigua y horarios incompletos. Esta especificación reemplaza esos datos; el plan de implementación se actualizará después de la revisión del usuario.
+
+## Manejo de faltantes y errores
 
 - Un dato no confirmado se omite.
-- Una imagen insuficiente se reemplaza por otra imagen oficial autorizada; no se mejora con generación de contenido nuevo.
+- Una imagen insuficiente se reemplaza por otra imagen oficial disponible, sin generación de contenido.
 - Un enlace debe ser completo y verificable antes de incorporarse.
-- Una incompatibilidad distinta de las cinco rutas autorizadas detiene la edición; no se amplía el alcance silenciosamente.
-- No se sustituyen testimonios ni horarios faltantes por texto ficticio.
+- Una incompatibilidad fuera de las rutas autorizadas detiene la edición y requiere aprobación.
+- No se sustituyen datos, productos ni reseñas faltantes por contenido ficticio.
 
 ## Verificación
 
-1. Comprobar que existan todas las rutas requeridas por el mapa de plantilla.
-2. Instalar dependencias cuando falten y ejecutar `npm run build`.
-3. Buscar restos de `Café Nómada`, `Cafe Nomada`, `@cafenomada`, `Tu Marca` y `example.com`.
-4. Verificar WhatsApp, Instagram, menú y ambos enlaces de Google Maps.
-5. Confirmar que toda imagen referenciada exista y tenga texto alternativo fiel.
-6. Comparar textos, productos, diferenciales y paleta contra este diseño.
-7. Revisar un viewport móvil cercano a `390 × 844` y uno de escritorio cercano a `1440 × 900`.
-8. Revisar desbordes, recortes, deformaciones, contraste, foco visible y secciones vacías.
+1. Confirmar raíz, rama, remotos y estado antes de editar.
+2. Comprobar que las interfaces de la aplicación coincidan con el mapa de la plantilla.
+3. Ejecutar `npm run build` antes y después de la adaptación.
+4. Buscar restos de `Café Nómada`, `Cafe Nomada`, `@cafenomada`, `Tu Marca`, `example.com`, precios y testimonios ficticios.
+5. Verificar WhatsApp, Instagram, menú y ambos enlaces de Maps sin enviar mensajes ni realizar escrituras externas.
+6. Confirmar que cada imagen referenciada exista, tenga procedencia registrada y use texto alternativo fiel.
+7. Comparar textos, horarios, productos, diferenciales, reseñas y paleta con esta especificación.
+8. Revisar un viewport móvil cercano a `390 × 844` y uno de escritorio cercano a `1440 × 900`.
+9. Revisar desbordes, recortes, deformaciones, contraste, foco visible, consola y secciones vacías.
+10. Confirmar al final que la raíz y los remotos no cambiaron.
 
 ## Criterios de aceptación
 
-- La landing mantiene la estructura general y el diseño del template, con solo las cinco rutas adicionales autorizadas.
-- No contiene precios en productos destacados.
-- No contiene datos operativos, reseñas o imágenes inventados.
-- Muestra correctamente las dos sucursales y los tres canales principales: WhatsApp, menú e Instagram.
-- Omite la sección de testimonios y el crédito de desarrollador.
-- Usa únicamente imágenes oficiales autorizadas de Dorina Café.
+- La landing conserva la estructura general de la plantilla.
+- Presenta las dos sucursales con horarios y Maps independientes.
+- Muestra WhatsApp, Instagram y menú verificados.
+- No contiene precios, teléfonos convencionales, historia, certificaciones ni disponibilidad inventada.
+- Incluye únicamente productos, reseñas e imágenes trazables a las fuentes aprobadas.
+- No contiene contenido ficticio de la plantilla ni crédito de desarrollador ficticio.
 - Compila sin errores y supera la revisión visual móvil y de escritorio.
-- No queda publicada ni se realiza push.
+- No se publica y no se hace push.
