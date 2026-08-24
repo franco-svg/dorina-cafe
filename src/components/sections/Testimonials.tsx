@@ -45,7 +45,7 @@ export function Testimonials({ section, testimonials }: TestimonialsProps) {
               <div className="mt-6">
                 <p className="font-semibold text-espresso">{testimonial.name}</p>
                 {testimonial.detail ? (
-                  <p className="mt-1 text-xs font-semibold uppercase text-coffee/70">
+                  <p className="mt-1 text-xs font-semibold uppercase text-coffee">
                     {testimonial.detail}
                   </p>
                 ) : null}

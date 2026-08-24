@@ -11,7 +11,7 @@ export function About({ about }: AboutProps) {
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
           <div className="space-y-6">
-            <p className="text-sm font-bold uppercase text-copper">Nosotros</p>
+            <p className="text-sm font-bold uppercase text-coffee">Nosotros</p>
             <h2 className="font-display text-3xl text-espresso sm:text-4xl lg:text-5xl">
               {about.title}
             </h2>
