@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Croissant de almendras</title>
+  <desc id="desc">Croissant dorado sobre plato ceramico.</desc>
+  <rect width="900" height="700" fill="#fff8ec"/>
+  <ellipse cx="450" cy="520" rx="265" ry="58" fill="#d8b98b"/>
+  <path d="M210 390c92-160 390-170 480 0-115-70-365-70-480 0Z" fill="#b66a3c"/>
+  <path d="M255 386c55-86 140-130 195-130s142 44 195 130c-88-44-300-44-390 0Z" fill="#d8b98b"/>
+  <path d="M306 364c30-45 74-70 112-78M493 286c44 12 82 38 112 78" fill="none" stroke="#8f5d39" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="354" cy="333" r="11" fill="#fff8ec"/>
+  <circle cx="422" cy="309" r="9" fill="#fff8ec"/>
+  <circle cx="540" cy="330" r="10" fill="#fff8ec"/>
+</svg>

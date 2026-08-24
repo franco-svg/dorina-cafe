@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Cookie de chocolate</title>
+  <desc id="desc">Cookie artesanal con chips de chocolate.</desc>
+  <rect width="900" height="700" fill="#f4ead8"/>
+  <ellipse cx="450" cy="535" rx="245" ry="48" fill="#2a1b14" opacity="0.15"/>
+  <circle cx="450" cy="350" r="195" fill="#b66a3c"/>
+  <circle cx="390" cy="290" r="28" fill="#2a1b14"/>
+  <circle cx="515" cy="280" r="22" fill="#2a1b14"/>
+  <circle cx="345" cy="400" r="24" fill="#2a1b14"/>
+  <circle cx="520" cy="430" r="30" fill="#2a1b14"/>
+  <circle cx="450" cy="360" r="18" fill="#2a1b14"/>
+  <path d="M292 300c70 38 120 36 170-6" fill="none" stroke="#d8b98b" stroke-width="18" stroke-linecap="round"/>
+  <path d="M482 506c56-20 96-56 118-110" fill="none" stroke="#d8b98b" stroke-width="16" stroke-linecap="round"/>
+</svg>

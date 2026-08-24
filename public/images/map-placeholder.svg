@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Mapa visual de ubicacion</title>
+  <desc id="desc">Mapa abstracto con calles y marcador de ubicacion.</desc>
+  <rect width="1200" height="780" fill="#f4ead8"/>
+  <path d="M0 165h1200M0 390h1200M0 620h1200" stroke="#d8b98b" stroke-width="34"/>
+  <path d="M205 0v780M492 0v780M820 0v780M1035 0v780" stroke="#fff8ec" stroke-width="46"/>
+  <path d="M0 560C215 490 365 520 532 585s360 86 668-30" fill="none" stroke="#8aa17c" stroke-width="58" opacity="0.72"/>
+  <circle cx="610" cy="392" r="118" fill="#173f35"/>
+  <path d="M610 250c-72 0-130 58-130 130 0 100 130 218 130 218s130-118 130-218c0-72-58-130-130-130Zm0 178a49 49 0 1 1 0-98 49 49 0 0 1 0 98Z" fill="#b66a3c"/>
+  <circle cx="610" cy="379" r="38" fill="#fff8ec"/>
+</svg>

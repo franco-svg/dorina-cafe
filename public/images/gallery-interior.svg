@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Interior de cafeteria</title>
+  <desc id="desc">Mesas, sillas y plantas dentro de una cafeteria calida.</desc>
+  <rect width="1000" height="760" fill="#e8d8bc"/>
+  <rect x="95" y="80" width="310" height="360" rx="24" fill="#fff8ec"/>
+  <rect x="145" y="135" width="85" height="250" rx="15" fill="#c7d6bd"/>
+  <rect x="262" y="135" width="90" height="250" rx="15" fill="#f4ead8"/>
+  <rect y="500" width="1000" height="260" fill="#6b442f"/>
+  <rect x="510" y="255" width="285" height="34" rx="17" fill="#173f35"/>
+  <rect x="555" y="289" width="34" height="220" fill="#173f35"/>
+  <rect x="718" y="289" width="34" height="220" fill="#173f35"/>
+  <circle cx="820" cy="415" r="62" fill="#8aa17c"/>
+  <circle cx="876" cy="350" r="42" fill="#8aa17c"/>
+</svg>

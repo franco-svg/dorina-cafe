@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Mesa con cafe</title>
+  <desc id="desc">Mesa con una taza de cafe y un libro abierto.</desc>
+  <rect width="1000" height="760" fill="#6b442f"/>
+  <rect x="80" y="120" width="410" height="270" rx="24" fill="#fff8ec" transform="rotate(-5 285 255)"/>
+  <path d="M148 188h270M145 250h280M150 315h230" stroke="#d8b98b" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="690" cy="370" r="142" fill="#fff8ec"/>
+  <circle cx="690" cy="370" r="90" fill="#6b442f"/>
+  <path d="M637 360c24-32 82-32 108 0-26 34-84 34-108 0Z" fill="#f4ead8"/>
+  <circle cx="835" cy="198" r="54" fill="#8aa17c"/>
+</svg>

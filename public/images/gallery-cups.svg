@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Tazas en barra</title>
+  <desc id="desc">Tazas de cafe sobre una barra de madera.</desc>
+  <rect width="1000" height="760" fill="#173f35"/>
+  <rect y="430" width="1000" height="330" fill="#6b442f"/>
+  <circle cx="245" cy="360" r="118" fill="#fff8ec"/>
+  <circle cx="245" cy="360" r="74" fill="#6b442f"/>
+  <circle cx="505" cy="355" r="132" fill="#f4ead8"/>
+  <circle cx="505" cy="355" r="82" fill="#6b442f"/>
+  <circle cx="772" cy="365" r="112" fill="#fff8ec"/>
+  <circle cx="772" cy="365" r="70" fill="#6b442f"/>
+  <rect x="155" y="540" width="690" height="34" rx="17" fill="#b66a3c"/>
+</svg>

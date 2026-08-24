@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Cafe filtrado</title>
+  <desc id="desc">Preparacion manual de cafe filtrado.</desc>
+  <rect width="1000" height="760" fill="#173f35"/>
+  <rect y="530" width="1000" height="230" fill="#2a1b14"/>
+  <path d="M360 210h280l-90 190H450l-90-190Z" fill="#fff8ec"/>
+  <path d="M400 400h200l-35 150H435l-35-150Z" fill="#6b442f"/>
+  <path d="M615 125c80 40 95 97 38 172" fill="none" stroke="#b66a3c" stroke-width="34" stroke-linecap="round"/>
+  <path d="M510 110c0 52 48 52 48 112" fill="none" stroke="#e8d8bc" stroke-width="20" stroke-linecap="round"/>
+  <ellipse cx="500" cy="583" rx="190" ry="38" fill="#6b442f"/>
+</svg>

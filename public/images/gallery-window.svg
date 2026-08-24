@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Rincon con ventana</title>
+  <desc id="desc">Rincon de cafeteria junto a una ventana con plantas.</desc>
+  <rect width="1000" height="760" fill="#f4ead8"/>
+  <rect x="90" y="70" width="520" height="440" rx="28" fill="#fff8ec"/>
+  <rect x="155" y="135" width="150" height="300" rx="18" fill="#c7d6bd"/>
+  <rect x="360" y="135" width="180" height="300" rx="18" fill="#e8d8bc"/>
+  <rect y="560" width="1000" height="200" fill="#6b442f"/>
+  <rect x="640" y="405" width="250" height="34" rx="17" fill="#173f35"/>
+  <rect x="685" y="439" width="24" height="130" fill="#173f35"/>
+  <rect x="815" y="439" width="24" height="130" fill="#173f35"/>
+  <circle cx="760" cy="315" r="82" fill="#8aa17c"/>
+  <circle cx="835" cy="255" r="42" fill="#8aa17c"/>
+</svg>

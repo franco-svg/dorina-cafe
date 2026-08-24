@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Fachada de cafeteria</title>
+  <desc id="desc">Fachada minimalista con toldo y puerta verde.</desc>
+  <rect width="1000" height="760" fill="#f4ead8"/>
+  <rect x="120" y="185" width="760" height="430" rx="28" fill="#e8d8bc"/>
+  <rect x="180" y="245" width="260" height="290" rx="18" fill="#173f35"/>
+  <rect x="515" y="245" width="230" height="210" rx="18" fill="#fff8ec"/>
+  <path d="M105 205h790l-72-92H177l-72 92Z" fill="#6b442f"/>
+  <path d="M170 205h110M360 205h110M550 205h110M740 205h100" stroke="#b66a3c" stroke-width="18" stroke-linecap="round"/>
+  <rect x="585" y="505" width="215" height="30" rx="15" fill="#8aa17c"/>
+</svg>

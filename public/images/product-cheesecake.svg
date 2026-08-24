@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Cheesecake de frutos rojos</title>
+  <desc id="desc">Porcion de cheesecake con salsa de frutos rojos.</desc>
+  <rect width="900" height="700" fill="#fff8ec"/>
+  <ellipse cx="450" cy="535" rx="255" ry="50" fill="#d8b98b"/>
+  <path d="M250 450 620 250v220L250 520v-70Z" fill="#f4ead8"/>
+  <path d="M250 520 620 470v58l-370 50v-58Z" fill="#8f5d39"/>
+  <path d="M620 250c70 42 70 174 0 220V250Z" fill="#e8d8bc"/>
+  <path d="M303 420c72 22 150 8 232-42 30-18 60-26 86-22" fill="none" stroke="#9f293c" stroke-width="32" stroke-linecap="round"/>
+  <circle cx="560" cy="314" r="24" fill="#9f293c"/>
+  <circle cx="616" cy="345" r="20" fill="#9f293c"/>
+  <circle cx="510" cy="342" r="18" fill="#9f293c"/>
+</svg>
