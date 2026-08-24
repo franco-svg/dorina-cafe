@@ -8,6 +8,14 @@ export type ScheduleItem = {
   hours: string;
 };
 
+export type Branch = {
+  id: string;
+  name: string;
+  address: string;
+  mapsUrl: string;
+  schedule: ScheduleItem[];
+};
+
 export type ProductTag = "Favorito" | "Nuevo" | "Más pedido";
 
 export type Product = {
@@ -76,16 +84,14 @@ export type SiteConfig = {
     highlightValue: string;
   };
   contact: {
-    address: string;
-    phone: string;
+    phone?: string;
+    whatsappLabel: string;
     whatsappUrl: string;
     instagramHandle: string;
     instagramUrl: string;
-    mapsUrl: string;
-    mapsEmbedUrl: string;
-    mapPlaceholderImage: string;
+    menuUrl: string;
+    branches: Branch[];
   };
-  schedule: ScheduleItem[];
   sections: {
     products: {
       eyebrow: string;
@@ -120,9 +126,4 @@ export type SiteConfig = {
   };
   navigation: InternalLink[];
   footerLinks: InternalLink[];
-  developer: {
-    creditLabel: string;
-    name: string;
-    url: string;
-  };
 };

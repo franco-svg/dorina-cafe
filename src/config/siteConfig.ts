@@ -2,109 +2,117 @@ import type { SiteConfig } from "../types";
 
 export const siteConfig: SiteConfig = {
   business: {
-    name: "Café Nómada",
+    name: "Dorina Café",
     tagline: "Café de especialidad y pastelería artesanal",
     description:
-      "Cafetería de especialidad con pastelería artesanal y un ambiente cálido y tranquilo.",
-    logo: "Café Nómada",
+      "Café de especialidad, pastelería artesanal, desayunos, brunch y almuerzos en Palermo y Villa Urquiza.",
+    logo: "Dorina Café",
   },
   seo: {
-    title: "Café Nómada | Café de especialidad en Palermo",
+    title: "Dorina Café | Palermo y Villa Urquiza",
     description:
-      "Café Nómada: café de especialidad, pastelería artesanal y un espacio cálido en Palermo, Ciudad Autónoma de Buenos Aires.",
+      "Café de especialidad, pastelería artesanal, desayunos, brunch y almuerzos en las dos sucursales de Dorina Café.",
   },
   hero: {
-    title: "Un buen café cambia tu día",
+    title: "Café de especialidad, pastelería artesanal y mucho más",
     subtitle:
-      "Café de especialidad, pastelería artesanal y un espacio para bajar un cambio.",
-    image: "/images/hero-cafe.svg",
-    imageAlt:
-      "Interior cálido de una cafetería con tazas de café y pastelería artesanal.",
+      "Desayunos, brunch y almuerzos para disfrutar en Palermo y Villa Urquiza.",
+    image: "/images/hero-dorina.jpg",
+    imageAlt: "Mesa de Dorina Café con platos dulces y salados.",
     primaryCtaLabel: "Cómo llegar",
   },
   about: {
-    title: "Nuestra historia",
-    text: "En Café Nómada creemos que una buena taza de café también puede ser una pausa. Seleccionamos cada grano, cuidamos cada preparación y creamos un espacio donde siempre den ganas de quedarse un poco más.",
-    image: "/images/about-barista.svg",
-    imageAlt: "Barista preparando café de especialidad en la barra.",
-    highlightLabel: "Desde",
-    highlightValue: "2021",
+    title: "Un momento rico, a cualquier hora",
+    text: "Dorina reúne café de especialidad, pastelería artesanal y platos para disfrutar durante todo el día en dos rincones de Buenos Aires.",
+    image: "/images/almuerzos.jpg",
+    imageAlt: "Tres platos salados de Dorina Café sobre una mesa de madera.",
+    highlightLabel: "Encontranos en",
+    highlightValue: "Palermo y Villa Urquiza",
   },
   contact: {
-    address: "Palermo, Ciudad Autónoma de Buenos Aires",
-    phone: "+54 9 11 2345 6789",
-    whatsappUrl: "https://wa.me/5491123456789",
-    instagramHandle: "@cafenomada",
-    instagramUrl: "https://www.instagram.com/",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Palermo%2C%20Ciudad%20Autonoma%20de%20Buenos%20Aires",
-    mapsEmbedUrl: "",
-    mapPlaceholderImage: "/images/map-placeholder.svg",
+    whatsappLabel: "+54 9 11 3001-4605",
+    whatsappUrl: "https://wa.me/5491130014605",
+    instagramHandle: "@dorina.cafe",
+    instagramUrl: "https://www.instagram.com/dorina.cafe/?hl=es",
+    menuUrl: "https://monline.com.ar/DorinaCafe",
+    branches: [
+      {
+        id: "palermo",
+        name: "Palermo",
+        address: "Nicaragua 4816, C1414, CABA",
+        mapsUrl: "https://maps.app.goo.gl/gpYkqomR3pMLu2CB6",
+        schedule: [
+          { day: "Lunes a viernes", hours: "8:30 a 20:00" },
+          { day: "Sábados y domingos", hours: "9:30 a 20:00" },
+        ],
+      },
+      {
+        id: "villa-urquiza",
+        name: "Villa Urquiza",
+        address: "Av. Triunvirato 5600, C1431, CABA",
+        mapsUrl: "https://maps.app.goo.gl/YW5y63X1NykVK8NJ9",
+        schedule: [
+          { day: "Lunes a viernes", hours: "8:30 a 20:00" },
+          { day: "Sábados y domingos", hours: "9:00 a 20:00" },
+        ],
+      },
+    ],
   },
-  schedule: [
-    { day: "Lunes a viernes", hours: "8:00 a 20:00" },
-    { day: "Sábados", hours: "9:00 a 21:00" },
-    { day: "Domingos", hours: "9:00 a 19:00" },
-  ],
   sections: {
     products: {
       eyebrow: "Favoritos",
-      title: "Productos destacados",
+      title: "Favoritos de Dorina",
       description:
-        "Una selección breve de cafés, pastelería y opciones saladas para empezar a conocer la propuesta.",
+        "Una selección de café, pastelería, brunch y opciones saladas de nuestra carta.",
     },
     benefits: {
-      eyebrow: "Diferenciales",
-      title: "Por qué elegirnos",
+      eyebrow: "Nuestra propuesta",
+      title: "Para disfrutar durante todo el día",
       description:
-        "Cuidamos los detalles que hacen que una visita simple se convierta en una pausa disfrutable.",
+        "Café, pastelería y platos dulces y salados en dos barrios de Buenos Aires.",
     },
     gallery: {
       eyebrow: "Galería",
-      title: "Un vistazo al espacio",
-      description:
-        "Café, pastelería, rincones tranquilos y la calidez del local en una composición simple.",
+      title: "Mirá todo lo que preparamos",
+      description: "Una selección real de platos compartidos por Dorina Café.",
     },
     testimonials: {
       eyebrow: "Opiniones",
-      title: "Lo que dicen nuestros clientes",
+      title: "Lo que cuentan quienes nos visitan",
       description:
-        "Comentarios ficticios incluidos como ejemplo para mostrar la estructura reutilizable de la sección.",
+        "Reseñas públicas de las sucursales de Palermo y Villa Urquiza.",
     },
     location: {
-      eyebrow: "Ubicación",
-      title: "Estamos en Palermo",
+      eyebrow: "Sucursales",
+      title: "Dos sucursales, la misma propuesta",
       description:
-        "Encontranos en una zona tranquila de Palermo y acercate cuando quieras hacer una pausa.",
+        "Elegí la sede que te quede más cerca y abrí las indicaciones en Google Maps.",
     },
     contact: {
       eyebrow: "Contacto",
       title: "Hablemos",
       description:
-        "Escribinos por WhatsApp, llamanos o seguinos en Instagram para ver novedades y productos de temporada.",
+        "Escribinos por WhatsApp, mirá el menú o seguinos en Instagram.",
     },
   },
   navigation: [
     { label: "Inicio", href: "#inicio" },
-    { label: "Productos", href: "#productos" },
+    { label: "Favoritos", href: "#productos" },
     { label: "Nosotros", href: "#nosotros" },
+    { label: "Propuesta", href: "#beneficios" },
     { label: "Galería", href: "#galeria" },
     { label: "Opiniones", href: "#opiniones" },
-    { label: "Ubicación", href: "#ubicacion" },
+    { label: "Sucursales", href: "#ubicacion" },
     { label: "Contacto", href: "#contacto" },
   ],
   footerLinks: [
     { label: "Inicio", href: "#inicio" },
-    { label: "Productos", href: "#productos" },
+    { label: "Favoritos", href: "#productos" },
     { label: "Nosotros", href: "#nosotros" },
+    { label: "Propuesta", href: "#beneficios" },
     { label: "Galería", href: "#galeria" },
     { label: "Opiniones", href: "#opiniones" },
-    { label: "Ubicación", href: "#ubicacion" },
+    { label: "Sucursales", href: "#ubicacion" },
     { label: "Contacto", href: "#contacto" },
   ],
-  developer: {
-    creditLabel: "Sitio desarrollado por",
-    name: "Tu Marca",
-    url: "https://example.com",
-  },
 };

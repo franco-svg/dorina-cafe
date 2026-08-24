@@ -44,7 +44,6 @@ function App() {
         <Location
           contact={siteConfig.contact}
           ctaLabel={siteConfig.hero.primaryCtaLabel}
-          schedule={siteConfig.schedule}
           section={siteConfig.sections.location}
         />
         <Contact contact={siteConfig.contact} section={siteConfig.sections.contact} />
@@ -52,9 +51,7 @@ function App() {
       <Footer
         business={siteConfig.business}
         contact={siteConfig.contact}
-        developer={siteConfig.developer}
         links={siteConfig.footerLinks}
-        schedule={siteConfig.schedule}
       />
     </>
   );

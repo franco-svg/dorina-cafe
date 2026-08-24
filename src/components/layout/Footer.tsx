@@ -1,21 +1,19 @@
 import { Coffee, Instagram, MapPin, MessageCircle } from "lucide-react";
-import type { InternalLink, ScheduleItem, SiteConfig } from "../../types";
+import type { InternalLink, SiteConfig } from "../../types";
 import { Container } from "../ui/Container";
 
 type FooterProps = {
   business: SiteConfig["business"];
   contact: SiteConfig["contact"];
-  developer: SiteConfig["developer"];
   links: InternalLink[];
-  schedule: ScheduleItem[];
 };
 
-export function Footer({ business, contact, developer, links, schedule }: FooterProps) {
+export function Footer({ business, contact, links }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-espresso text-cream">
-      <Container className="grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr] lg:py-16">
+      <Container className="grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1.2fr] lg:py-16">
         <div className="space-y-5">
           <a href="#inicio" className="inline-flex items-center gap-3 text-cream">
             <span className="flex h-10 w-10 items-center justify-center rounded-md bg-cream text-forest">
@@ -61,37 +59,40 @@ export function Footer({ business, contact, developer, links, schedule }: Footer
           </nav>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           <h2 className="text-sm font-bold uppercase text-parchment">Visitanos</h2>
-          <p className="flex gap-2 text-sm leading-6 text-cream/72">
-            <MapPin size={18} className="mt-0.5 shrink-0 text-copper" aria-hidden="true" />
-            <span>{contact.address}</span>
-          </p>
-          <div className="space-y-2 text-sm text-cream/72">
-            {schedule.map((item) => (
-              <p key={item.day} className="flex justify-between gap-4">
-                <span>{item.day}</span>
-                <span className="text-cream">{item.hours}</span>
+          {contact.branches.map((branch) => (
+            <div
+              key={branch.id}
+              className="space-y-2 border-b border-cream/10 pb-4 last:border-0"
+            >
+              <p className="flex gap-2 text-sm leading-6 text-cream/72">
+                <MapPin
+                  size={18}
+                  className="mt-0.5 shrink-0 text-copper"
+                  aria-hidden="true"
+                />
+                <span>
+                  <strong className="text-cream">{branch.name}:</strong> {branch.address}
+                </span>
               </p>
-            ))}
-          </div>
+              {branch.schedule.map((item) => (
+                <p
+                  key={item.day}
+                  className="flex justify-between gap-3 pl-6 text-xs text-cream/65"
+                >
+                  <span>{item.day}</span>
+                  <span className="text-right text-cream">{item.hours}</span>
+                </p>
+              ))}
+            </div>
+          ))}
         </div>
       </Container>
 
       <div className="border-t border-cream/10">
-        <Container className="flex flex-col gap-3 py-5 text-xs text-cream/60 sm:flex-row sm:items-center sm:justify-between">
+        <Container className="py-5 text-xs text-cream/60">
           <p>© {currentYear} {business.name}. Todos los derechos reservados.</p>
-          <p>
-            {developer.creditLabel}{" "}
-            <a
-              href={developer.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-cream transition hover:text-parchment"
-            >
-              {developer.name}
-            </a>
-          </p>
         </Container>
       </div>
     </footer>

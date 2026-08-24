@@ -1,4 +1,4 @@
-import { Instagram, MessageCircle, Phone } from "lucide-react";
+import { BookOpen, Instagram, MessageCircle, Phone } from "lucide-react";
 import type { SiteConfig } from "../../types";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
@@ -13,18 +13,22 @@ export function Contact({ contact, section }: ContactProps) {
   const contactItems = [
     {
       label: "WhatsApp",
-      value: contact.phone,
+      value: contact.whatsappLabel,
       href: contact.whatsappUrl,
       icon: MessageCircle,
       external: true,
     },
-    {
-      label: "Teléfono",
-      value: contact.phone,
-      href: `tel:${contact.phone.replace(/\s/g, "")}`,
-      icon: Phone,
-      external: false,
-    },
+    ...(contact.phone
+      ? [
+          {
+            label: "Teléfono",
+            value: contact.phone,
+            href: `tel:${contact.phone.replace(/\s/g, "")}`,
+            icon: Phone,
+            external: false,
+          },
+        ]
+      : []),
     {
       label: "Instagram",
       value: contact.instagramHandle,
@@ -86,6 +90,15 @@ export function Contact({ contact, section }: ContactProps) {
                 className="w-full sm:w-auto"
               >
                 Instagram
+              </Button>
+              <Button
+                href={contact.menuUrl}
+                external
+                icon={<BookOpen size={18} />}
+                variant="outline"
+                className="w-full sm:w-auto"
+              >
+                Ver menú
               </Button>
             </div>
           </div>
