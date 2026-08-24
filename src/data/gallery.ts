@@ -2,45 +2,35 @@ import type { GalleryImage } from "../types";
 
 export const galleryImages: GalleryImage[] = [
   {
-    id: "barra",
-    src: "/images/gallery-cups.svg",
-    alt: "Tazas de café servidas sobre una barra de madera.",
+    id: "mesa",
+    src: "/images/hero-dorina.jpg",
+    alt: "Mesa de Dorina Café con platos dulces y salados.",
     featured: true,
   },
   {
-    id: "pasteleria",
-    src: "/images/gallery-pastry.svg",
-    alt: "Pastelería artesanal exhibida en una vitrina.",
+    id: "cafe-avocado",
+    src: "/images/cafe-avocado.jpg",
+    alt: "Avocado toast con huevo poché y una taza de café.",
   },
   {
-    id: "interior",
-    src: "/images/gallery-interior.svg",
-    alt: "Interior cálido de la cafetería con mesas y plantas.",
+    id: "almuerzos",
+    src: "/images/almuerzos.jpg",
+    alt: "Tres platos salados de Dorina Café sobre una mesa de madera.",
   },
   {
-    id: "fachada",
-    src: "/images/gallery-facade.svg",
-    alt: "Fachada minimalista de la cafeteria.",
-  },
-  {
-    id: "mesas",
-    src: "/images/gallery-table.svg",
-    alt: "Mesa con cafe, libro y luz natural.",
-  },
-  {
-    id: "preparacion",
-    src: "/images/gallery-pour.svg",
-    alt: "Preparación manual de café filtrado.",
+    id: "cheesecake",
+    src: "/images/cheesecake.jpg",
+    alt: "Cheesecake de frutos rojos decorado con frutos y flores.",
     featured: true,
   },
   {
-    id: "ventana",
-    src: "/images/gallery-window.svg",
-    alt: "Rincón junto a la ventana con plantas.",
+    id: "brunch",
+    src: "/images/mesa-brunch.jpg",
+    alt: "Mesa con mbejú, tostado y porciones de torta.",
   },
   {
-    id: "detalle",
-    src: "/images/gallery-detail.svg",
-    alt: "Detalle de vajilla artesanal y granos de café.",
+    id: "croissant-salado",
+    src: "/images/croissant-salado.jpg",
+    alt: "Croissant salado con jamón y queso fundido.",
   },
 ];

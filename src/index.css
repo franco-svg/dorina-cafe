@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --color-cream: 255 248 236;
-  --color-linen: 244 234 216;
-  --color-parchment: 232 216 188;
-  --color-coffee: 107 68 47;
-  --color-espresso: 42 27 20;
-  --color-forest: 23 63 53;
-  --color-sage: 138 161 124;
-  --color-copper: 182 106 60;
-  --color-ink: 37 31 27;
+  --color-cream: 247 242 232;
+  --color-linen: 238 228 214;
+  --color-parchment: 216 197 175;
+  --color-coffee: 122 81 56;
+  --color-espresso: 43 27 22;
+  --color-forest: 53 72 59;
+  --color-sage: 166 175 149;
+  --color-copper: 184 97 59;
+  --color-ink: 21 19 17;
 }
 
 * {

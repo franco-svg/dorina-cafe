@@ -2,34 +2,19 @@ import type { Testimonial } from "../types";
 
 export const testimonials: Testimonial[] = [
   {
-    id: "valentina",
-    name: "Valentina R.",
+    id: "carolina-blanco",
+    name: "Carolina Blanco",
     rating: 5,
     comment:
-      "El café es excelente y el ambiente es ideal para trabajar o pasar la tarde.",
-    detail: "Vecina de Palermo",
+      "Destacó las medialunas, el chocolate caliente, la variedad y la atención.",
+    detail: "Villa Urquiza · Google Maps",
   },
   {
-    id: "martin",
-    name: "Martin G.",
+    id: "nicolas-guichot",
+    name: "Nicolas Guichot",
     rating: 5,
     comment:
-      "La pastelería se nota hecha con cuidado. El croissant de almendras es increíble.",
-    detail: "Cliente frecuente",
-  },
-  {
-    id: "lucia",
-    name: "Lucia P.",
-    rating: 5,
-    comment:
-      "Un lugar cálido, tranquilo y con muy buena atención. Siempre vuelvo.",
-  },
-  {
-    id: "santiago",
-    name: "Santiago M.",
-    rating: 4,
-    comment:
-      "Muy buen flat white, mesas cómodas y música en el volumen justo.",
-    detail: "Trabajo remoto",
+      "Destacó el ambiente acogedor, cálido y tranquilo, y las porciones abundantes.",
+    detail: "Palermo · Google Maps",
   },
 ];

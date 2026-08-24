@@ -5,36 +5,25 @@ export const benefits: Benefit[] = [
     id: "especialidad",
     icon: "coffee",
     title: "Café de especialidad",
-    description: "Granos seleccionados y recetas cuidadas para cada preparación.",
+    description: "Preparaciones de café para disfrutar en ambas sucursales.",
   },
   {
     id: "pasteleria",
     icon: "pastry",
     title: "Pastelería artesanal",
-    description: "Productos horneados todos los dias con ingredientes simples.",
+    description: "Tortas, croissants, cookies y otras opciones de pastelería.",
   },
   {
-    id: "vegetariano",
-    icon: "leaf",
-    title: "Opciones vegetarianas",
-    description: "Alternativas frescas para desayunos, meriendas y almuerzos livianos.",
-  },
-  {
-    id: "pet-friendly",
-    icon: "paw",
-    title: "Pet friendly",
-    description: "Un espacio amable para venir con tu compañía de cuatro patas.",
-  },
-  {
-    id: "wifi",
-    icon: "wifi",
-    title: "WiFi disponible",
-    description: "Conexión estable para trabajar, estudiar o resolver pendientes.",
-  },
-  {
-    id: "ambiente",
+    id: "brunch",
     icon: "armchair",
-    title: "Ambiente tranquilo",
-    description: "Música suave, mesas cómodas y una pausa real en la ciudad.",
+    title: "Brunch todo el día",
+    description: "Opciones de brunch disponibles durante toda la jornada.",
+  },
+  {
+    id: "opciones",
+    icon: "leaf",
+    title: "Opciones puntuales",
+    description:
+      "Alternativas vegetarianas, veganas y sin TACC identificadas en la carta.",
   },
 ];
