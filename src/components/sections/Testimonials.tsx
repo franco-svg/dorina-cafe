@@ -19,7 +19,7 @@ export function Testimonials({ section, testimonials }: TestimonialsProps) {
           description={section.description}
           align="center"
         />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:mt-14 lg:grid-cols-4">
+        <div className="mx-auto mt-10 grid max-w-4xl gap-5 md:grid-cols-2 lg:mt-14">
           {testimonials.map((testimonial) => (
             <Card key={testimonial.id} className="flex h-full flex-col p-6">
               <div
