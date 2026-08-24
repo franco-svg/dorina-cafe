@@ -2,132 +2,131 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Construir una landing de Dorina Café basada en `Test_landing`, con dos sucursales, productos sin precios, imágenes oficiales, WhatsApp, menú e Instagram verificados.
+**Goal:** Adaptar la aplicación existente para presentar Dorina Café con contenido real, dos sucursales, horarios propios, reseñas trazables, fotografías oficiales y accesos verificados a WhatsApp, menú, Instagram y Google Maps.
 
-**Architecture:** Conservar React, TypeScript, Vite, Tailwind y la estructura visual del template. El contenido seguirá centralizado en `siteConfig` y los archivos de `src/data`; una ampliación mínima del modelo permitirá múltiples sucursales, teléfono opcional, testimonios vacíos y la ausencia de crédito de desarrollador.
+**Architecture:** Conservar React, TypeScript, Vite, Tailwind CSS y la composición de la plantilla. Centralizar identidad y enlaces en `siteConfig`, mantener productos, beneficios, galería y reseñas en sus módulos de datos, y ampliar el contrato de contacto para que cada sucursal posea dirección, Maps y horario propios.
 
-**Tech Stack:** React 18, TypeScript 5.7, Vite 6, Tailwind CSS 3, lucide-react, npm.
+**Tech Stack:** React 18, TypeScript 5.7, Vite 6, Tailwind CSS 3, lucide-react y npm.
 
 ## Global Constraints
 
-- Proyecto destino: `D:\Devs\dorinacafe\dorina-cafe`.
-- Repositorio: `https://github.com/franco-svg/Test_landing.git`; clonar la rama predeterminada actual.
+- Proyecto destino: `D:\Devs\dorina-cafe`.
+- Rama esperada: `feat/dorina-cafe-dev`.
+- Remoto esperado: `origin -> https://github.com/franco-svg/dorina-cafe.git`.
+- Fuente de plantilla en modo lectura: `https://github.com/franco-svg/Test_landing.git`.
 - No publicar, no hacer push, no configurar hosting y no ejecutar `npm run deploy`.
-- No mostrar precios en productos destacados.
-- No inventar horarios, teléfono convencional, reseñas, historia, productos ni atributos del local.
-- Usar únicamente imágenes oficiales de `@dorina.cafe`, autorizadas por el usuario.
-- Usar `@dorina.cafe`; no usar el enlace antiguo e inexistente `@dorinacafe`.
-- Horario publicable: solamente lunes, 8:30–20:00, para ambas sucursales.
-- Conservar componentes y layout salvo las rutas expresamente autorizadas en la Task 2.
-- Eliminar por completo el crédito “Sitio desarrollado por”, `Tu Marca` y `example.com`.
-- Detenerse si la estructura recién clonada no contiene las rutas requeridas o cambió sus interfaces de forma incompatible.
+- No mostrar precios ni inventar teléfono convencional, historia, certificaciones, disponibilidad, productos o reseñas.
+- Usar exclusivamente `@dorina.cafe`; no usar el enlace antiguo `@dorinacafe`.
+- Usar únicamente las seis fotografías oficiales aprobadas; no generar imágenes con IA.
+- Eliminar `Café Nómada`, testimonios ficticios, `Tu Marca`, `example.com` y el bloque de crédito ficticio.
+- Conservar la configuración de build y el orden general de secciones.
+- Detenerse si una corrección exige modificar un componente distinto de `src/App.tsx`, `Location.tsx`, `Contact.tsx` o `Footer.tsx`.
 
 ---
 
-### Task 1: Clonar y validar la línea base
+## File Structure
+
+- `src/types/index.ts`: contratos `ScheduleItem`, `Branch` y `SiteConfig`.
+- `src/config/siteConfig.ts`: identidad, SEO, hero, presentación, contacto, sucursales, horarios, títulos y navegación.
+- `src/components/sections/Location.tsx`: tarjetas de sucursales, horarios y enlaces de Maps.
+- `src/components/sections/Contact.tsx`: WhatsApp, Instagram, teléfono opcional y menú.
+- `src/components/layout/Footer.tsx`: marca, navegación y resumen de ambas sucursales.
+- `src/App.tsx`: composición y propagación de los contratos actualizados.
+- `src/data/products.ts`: seis productos respaldados por el menú.
+- `src/data/benefits.ts`: cuatro diferenciales respaldados.
+- `src/data/gallery.ts`: seis fotografías oficiales y textos alternativos.
+- `src/data/testimonials.ts`: dos reseñas atribuidas y parafraseadas.
+- `src/index.css`: nueve tokens RGB aprobados.
+- `public/images/*.jpg`: fotografías oficiales descargadas desde Instagram.
+- `public/images/SOURCES.md`: procedencia, uso y texto alternativo de cada imagen.
+
+---
+
+### Task 1: Verify the destination and baseline
 
 **Files:**
-- Create: `D:\Devs\dorinacafe\dorina-cafe\` mediante clone
 - Verify: `package.json`
-- Verify: `src/config/siteConfig.ts`
-- Verify: `src/data/products.ts`
-- Verify: `src/data/benefits.ts`
-- Verify: `src/data/gallery.ts`
-- Verify: `src/data/testimonials.ts`
 - Verify: `src/types/index.ts`
+- Verify: `src/config/siteConfig.ts`
 - Verify: `src/components/sections/Location.tsx`
 - Verify: `src/components/sections/Contact.tsx`
-- Verify: `src/components/sections/Testimonials.tsx`
 - Verify: `src/components/layout/Footer.tsx`
 - Verify: `src/App.tsx`
-- Verify: `src/index.css`
-- Verify: `public/images/`
 
 **Interfaces:**
-- Consumes: diseño aprobado en `D:\Devs\dorinacafe\docs\superpowers\specs\2026-08-24-dorina-cafe-landing-design.md`.
-- Produces: checkout limpio, compatible y con build de referencia exitoso.
+- Consumes: repository already open at `D:\Devs\dorina-cafe`.
+- Produces: recorded clean baseline and successful reference build.
 
-- [ ] **Step 1: Confirmar que el destino siga libre**
+- [ ] **Step 1: Record repository identity**
+
+Run from `D:\Devs\dorina-cafe`:
+
+```powershell
+git rev-parse --show-toplevel
+git branch --show-current
+git remote -v
+git status --short
+```
+
+Expected:
+
+```text
+D:/Devs/dorina-cafe
+feat/dorina-cafe-dev
+origin  https://github.com/franco-svg/dorina-cafe.git (fetch)
+origin  https://github.com/franco-svg/dorina-cafe.git (push)
+```
+
+`git status --short` must be empty. If root, branch, remote or cleanliness differs, stop and report the mismatch.
+
+- [ ] **Step 2: Verify the template contract paths**
 
 Run:
 
 ```powershell
-Test-Path -LiteralPath 'D:\Devs\dorinacafe\dorina-cafe'
-```
-
-Expected: `False`. Si devuelve `True`, detenerse y no mezclar ni sobrescribir contenido.
-
-- [ ] **Step 2: Clonar la plantilla en la ruta aprobada**
-
-Run:
-
-```powershell
-git clone https://github.com/franco-svg/Test_landing.git 'D:\Devs\dorinacafe\dorina-cafe'
-```
-
-Expected: clone completo sin errores.
-
-- [ ] **Step 3: Verificar todas las rutas requeridas**
-
-Run from `D:\Devs\dorinacafe\dorina-cafe`:
-
-```powershell
-$required = @(
+$dorinaRequiredPaths = @(
   'package.json',
+  'src/types/index.ts',
   'src/config/siteConfig.ts',
   'src/data/products.ts',
   'src/data/benefits.ts',
   'src/data/gallery.ts',
   'src/data/testimonials.ts',
-  'src/types/index.ts',
   'src/components/sections/Location.tsx',
   'src/components/sections/Contact.tsx',
-  'src/components/sections/Testimonials.tsx',
   'src/components/layout/Footer.tsx',
   'src/App.tsx',
   'src/index.css',
   'public/images'
 )
-$missing = $required | Where-Object { -not (Test-Path -LiteralPath $_) }
-$missing
+$dorinaRequiredPaths | Where-Object { -not (Test-Path -LiteralPath $_) }
 ```
 
-Expected: sin salida. Si aparece una ruta, enumerarla y detenerse.
+Expected: no output.
 
-- [ ] **Step 4: Confirmar las interfaces conocidas antes de editar**
+- [ ] **Step 3: Capture the failing content audit**
 
 Run:
 
 ```powershell
-rg -n 'address: string|mapsUrl: string|phone: string|developer:|<Testimonials|contact\.phone|contact\.address' src
+rg -n 'Café Nómada|Cafe Nomada|@cafenomada|Tu Marca|example\.com|Valentina R\.|Martin G\.|Lucia P\.|Santiago M\.' src
 ```
 
-Expected: una sola dirección/Maps en `SiteConfig`, teléfono obligatorio, crédito de desarrollador, `Testimonials` incondicional y consumidores en Location/Contact/Footer. Si la forma difiere, detenerse.
+Expected: matches in configuration, testimonials and footer. These matches are the red baseline that later tasks must eliminate.
 
-- [ ] **Step 5: Instalar dependencias y ejecutar el build de referencia**
+- [ ] **Step 4: Build the unmodified baseline**
 
 Run:
 
 ```powershell
-npm install
 npm run build
 ```
 
-Expected: TypeScript y Vite finalizan con código 0 y crean `dist/`.
-
-- [ ] **Step 6: Confirmar que el checkout continúa limpio**
-
-Run:
-
-```powershell
-git status --short
-```
-
-Expected: sin cambios versionados. No crear commit para esta task porque aún no hay modificaciones del proyecto.
+Expected: TypeScript and Vite exit with code 0 and generate `dist/`.
 
 ---
 
-### Task 2: Adaptar el template a dos sucursales y datos opcionales
+### Task 2: Add the two-branch contact model and update its consumers
 
 **Files:**
 - Modify: `src/types/index.ts`
@@ -138,22 +137,22 @@ Expected: sin cambios versionados. No crear commit para esta task porque aún no
 - Modify: `src/App.tsx`
 
 **Interfaces:**
-- Consumes: `ScheduleItem`, `InternalLink` y componentes UI existentes.
-- Produces: `Branch`, `SiteConfig["contact"]["branches"]`, `SiteConfig["contact"]["phone"]?: string`; `Location`, `Contact` y `Footer` compatibles con esos campos.
+- Consumes: `ScheduleItem`, `InternalLink`, `Button`, `Container` and `SectionHeading`.
+- Produces: `Branch`, `SiteConfig["contact"]["branches"]`, `whatsappLabel`, optional `phone`, branch-owned schedules and consumers that no longer expect global `schedule` or `developer` properties.
 
-- [ ] **Step 1: Capturar las limitaciones actuales como prueba de cambio**
+- [ ] **Step 1: Record the structural red baseline**
 
 Run:
 
 ```powershell
-rg -n 'address: string|mapsUrl: string|phone: string|developer:|<Testimonials|label: "Teléfono"' src
+rg -n 'address: string|phone: string|mapsUrl: string|schedule: ScheduleItem\[\]|developer:|contact\.address|contact\.mapsUrl|siteConfig\.schedule|siteConfig\.developer' src
 ```
 
-Expected: aparecen los campos y renders que el brief prohíbe. Esta es la línea base que debe desaparecer.
+Expected: matches proving the template accepts one address, one schedule and a required developer credit.
 
-- [ ] **Step 2: Definir el contrato de sucursal y contacto opcional**
+- [ ] **Step 2: Define `Branch` and the new `SiteConfig` contract**
 
-In `src/types/index.ts`, add this type after `ScheduleItem`:
+In `src/types/index.ts`, keep `ScheduleItem` and add immediately after it:
 
 ```ts
 export type Branch = {
@@ -161,14 +160,16 @@ export type Branch = {
   name: string;
   address: string;
   mapsUrl: string;
+  schedule: ScheduleItem[];
 };
 ```
 
-Replace the `contact` shape inside `SiteConfig` with:
+Replace the `contact`, global `schedule` and `developer` portions of `SiteConfig` so the complete contact shape is:
 
 ```ts
 contact: {
   phone?: string;
+  whatsappLabel: string;
   whatsappUrl: string;
   instagramHandle: string;
   instagramUrl: string;
@@ -177,11 +178,11 @@ contact: {
 };
 ```
 
-Remove the complete `developer` property from `SiteConfig`.
+Remove the top-level `schedule: ScheduleItem[]` and the complete `developer` property from `SiteConfig`. Keep every unrelated type unchanged.
 
-- [ ] **Step 3: Reemplazar la configuración ficticia por la identidad y enlaces aprobados**
+- [ ] **Step 3: Replace the fictitious configuration with the approved identity**
 
-In `src/config/siteConfig.ts`, keep the existing `SiteConfig` object shape except for the approved contact extension and use these exact values:
+In `src/config/siteConfig.ts`, preserve the `SiteConfig` annotation and set the business-facing values to:
 
 ```ts
 business: {
@@ -201,18 +202,20 @@ hero: {
   subtitle:
     "Desayunos, brunch y almuerzos para disfrutar en Palermo y Villa Urquiza.",
   image: "/images/hero-dorina.jpg",
-  imageAlt: "Mesa de Dorina Café con platos dulces y salados junto a una ventana.",
+  imageAlt: "Mesa de Dorina Café con platos dulces y salados.",
   primaryCtaLabel: "Cómo llegar",
 },
 about: {
   title: "Un momento rico, a cualquier hora",
-  text: "Dorina reúne café de especialidad, pastelería artesanal y platos para disfrutar durante todo el día en dos rincones de Buenos Aires.",
+  text:
+    "Dorina reúne café de especialidad, pastelería artesanal y platos para disfrutar durante todo el día en dos rincones de Buenos Aires.",
   image: "/images/almuerzos.jpg",
   imageAlt: "Tres platos salados de Dorina Café sobre una mesa de madera.",
   highlightLabel: "Encontranos en",
   highlightValue: "Palermo y Villa Urquiza",
 },
 contact: {
+  whatsappLabel: "+54 9 11 3001-4605",
   whatsappUrl: "https://wa.me/5491130014605",
   instagramHandle: "@dorina.cafe",
   instagramUrl: "https://www.instagram.com/dorina.cafe/?hl=es",
@@ -223,19 +226,26 @@ contact: {
       name: "Palermo",
       address: "Nicaragua 4816, C1414, CABA",
       mapsUrl: "https://maps.app.goo.gl/gpYkqomR3pMLu2CB6",
+      schedule: [
+        { day: "Lunes a viernes", hours: "8:30 a 20:00" },
+        { day: "Sábados y domingos", hours: "9:30 a 20:00" },
+      ],
     },
     {
       id: "villa-urquiza",
       name: "Villa Urquiza",
       address: "Av. Triunvirato 5600, C1431, CABA",
       mapsUrl: "https://maps.app.goo.gl/YW5y63X1NykVK8NJ9",
+      schedule: [
+        { day: "Lunes a viernes", hours: "8:30 a 20:00" },
+        { day: "Sábados y domingos", hours: "9:00 a 20:00" },
+      ],
     },
   ],
 },
-schedule: [{ day: "Lunes", hours: "8:30 a 20:00" }],
 ```
 
-Use these section and navigation values:
+Set section copy to:
 
 ```ts
 sections: {
@@ -252,16 +262,16 @@ sections: {
   gallery: {
     eyebrow: "Galería",
     title: "Mirá todo lo que preparamos",
-    description: "Una selección real de platos y momentos compartidos por Dorina Café.",
+    description: "Una selección real de platos compartidos por Dorina Café.",
   },
   testimonials: {
-    eyebrow: "",
-    title: "",
-    description: "",
+    eyebrow: "Opiniones",
+    title: "Lo que cuentan quienes nos visitan",
+    description: "Reseñas públicas de las sucursales de Palermo y Villa Urquiza.",
   },
   location: {
     eyebrow: "Sucursales",
-    title: "Dos sucursales, la misma esencia",
+    title: "Dos sucursales, la misma propuesta",
     description: "Elegí la sede que te quede más cerca y abrí las indicaciones en Google Maps.",
   },
   contact: {
@@ -270,73 +280,118 @@ sections: {
     description: "Escribinos por WhatsApp, mirá el menú o seguinos en Instagram.",
   },
 },
+```
+
+Use these exact navigation arrays:
+
+```ts
 navigation: [
   { label: "Inicio", href: "#inicio" },
-  { label: "Productos", href: "#productos" },
+  { label: "Favoritos", href: "#productos" },
   { label: "Nosotros", href: "#nosotros" },
+  { label: "Propuesta", href: "#beneficios" },
   { label: "Galería", href: "#galeria" },
+  { label: "Opiniones", href: "#opiniones" },
   { label: "Sucursales", href: "#ubicacion" },
   { label: "Contacto", href: "#contacto" },
 ],
 footerLinks: [
   { label: "Inicio", href: "#inicio" },
-  { label: "Productos", href: "#productos" },
+  { label: "Favoritos", href: "#productos" },
   { label: "Nosotros", href: "#nosotros" },
+  { label: "Propuesta", href: "#beneficios" },
   { label: "Galería", href: "#galeria" },
+  { label: "Opiniones", href: "#opiniones" },
   { label: "Sucursales", href: "#ubicacion" },
   { label: "Contacto", href: "#contacto" },
 ],
 ```
 
-Do not include `phone`, `developer`, prices or unverified schedule entries.
+Do not add `phone`, a global `schedule` or `developer`.
 
-- [ ] **Step 4: Renderizar dos sucursales dentro del layout de Location**
+- [ ] **Step 4: Render branch-owned schedules in `Location`**
 
-In `src/components/sections/Location.tsx`, remove the single map/embed branch and render `contact.branches` as cards in the existing two-column section. Each card must use this structure:
+Replace `LocationProps` with:
 
-```tsx
-{contact.branches.map((branch) => (
-  <article
-    key={branch.id}
-    className="rounded-lg border border-coffee/10 bg-linen p-6 shadow-soft"
-  >
-    <div className="flex gap-3">
-      <MapPin className="mt-1 shrink-0 text-copper" size={22} aria-hidden="true" />
-      <div>
-        <h3 className="font-display text-xl font-bold text-espresso">{branch.name}</h3>
-        <p className="mt-2 text-sm leading-6 text-ink/72">{branch.address}</p>
-      </div>
-    </div>
-    <Button href={branch.mapsUrl} external icon={<MapPin size={18} />} className="mt-5">
-      {ctaLabel}
-    </Button>
-  </article>
-))}
+```ts
+type LocationProps = {
+  contact: SiteConfig["contact"];
+  ctaLabel: string;
+  section: SiteConfig["sections"]["location"];
+};
 ```
 
-Keep the verified schedule once, alongside the section heading. Do not show an iframe, map placeholder or combined Maps link.
-
-- [ ] **Step 5: Omitir teléfono y agregar acceso al menú en Contact**
-
-In `src/components/sections/Contact.tsx`, build the contact items with the phone entry only when `contact.phone` exists:
+Replace the component body with a section that keeps `SectionHeading` and renders this grid:
 
 ```tsx
+<div className="mt-10 grid gap-6 lg:mt-14 lg:grid-cols-2">
+  {contact.branches.map((branch) => (
+    <article
+      key={branch.id}
+      className="rounded-lg border border-coffee/10 bg-linen p-6 shadow-soft sm:p-8"
+    >
+      <div className="flex gap-3">
+        <MapPin className="mt-1 shrink-0 text-copper" size={22} aria-hidden="true" />
+        <div>
+          <h3 className="font-display text-2xl text-espresso">{branch.name}</h3>
+          <p className="mt-2 text-sm leading-6 text-ink/72">{branch.address}</p>
+        </div>
+      </div>
+
+      <div className="mt-6 flex gap-3 border-t border-coffee/10 pt-6">
+        <Clock className="mt-1 shrink-0 text-copper" size={22} aria-hidden="true" />
+        <div className="w-full">
+          <h4 className="font-semibold text-espresso">Horarios</h4>
+          <div className="mt-2 grid gap-2 text-sm text-ink/72">
+            {branch.schedule.map((item) => (
+              <p key={item.day} className="flex justify-between gap-4">
+                <span>{item.day}</span>
+                <span className="text-right font-semibold text-espresso">{item.hours}</span>
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Button href={branch.mapsUrl} external icon={<MapPin size={18} />} className="mt-6">
+        {ctaLabel}
+      </Button>
+    </article>
+  ))}
+</div>
+```
+
+Remove iframe, map placeholder, single-address rendering and the `schedule` prop. Keep `Clock`, `MapPin`, `Button`, `Container` and `SectionHeading` imports.
+
+- [ ] **Step 5: Make phone optional and add the menu in `Contact`**
+
+Use imports:
+
+```ts
+import { BookOpen, Instagram, MessageCircle, Phone } from "lucide-react";
+```
+
+Build `contactItems` exactly as:
+
+```ts
 const contactItems = [
   {
     label: "WhatsApp",
-    value: "+54 9 11 3001-4605",
+    value: contact.whatsappLabel,
     href: contact.whatsappUrl,
     icon: MessageCircle,
     external: true,
   },
   ...(contact.phone
-    ? [{
-        label: "Teléfono",
-        value: contact.phone,
-        href: `tel:${contact.phone.replace(/\s/g, "")}`,
-        icon: Phone,
-        external: false,
-      }]
+    ? [
+        {
+          label: "Teléfono",
+          value: contact.phone,
+          href: `tel:${contact.phone.replace(/\s/g, "")}`,
+          icon: Phone,
+          external: false,
+        },
+      ]
     : []),
   {
     label: "Instagram",
@@ -348,61 +403,110 @@ const contactItems = [
 ];
 ```
 
-Add an outline button linking to `contact.menuUrl` with label `Ver menú`. Preserve the WhatsApp and Instagram buttons and existing card layout.
-
-- [ ] **Step 6: Mostrar ambas direcciones y eliminar el crédito en Footer**
-
-In `src/components/layout/Footer.tsx`:
-
-- remove `developer` from `FooterProps` and the function parameters;
-- replace the single `contact.address` paragraph with `contact.branches.map(...)`, showing branch name and address;
-- delete the paragraph containing `developer.creditLabel`, `developer.url` and `developer.name`;
-- keep copyright, navigation, schedule, Instagram and WhatsApp.
-
-The branch output must use stable keys:
+Keep the existing contact-card rendering and add this button beside WhatsApp and Instagram:
 
 ```tsx
-{contact.branches.map((branch) => (
-  <p key={branch.id} className="flex gap-2 text-sm leading-6 text-cream/72">
-    <MapPin size={18} className="mt-0.5 shrink-0 text-copper" aria-hidden="true" />
-    <span><strong className="text-cream">{branch.name}:</strong> {branch.address}</span>
-  </p>
-))}
+<Button
+  href={contact.menuUrl}
+  external
+  icon={<BookOpen size={18} />}
+  variant="outline"
+  className="w-full sm:w-auto"
+>
+  Ver menú
+</Button>
 ```
 
-- [ ] **Step 7: Omitir testimonios vacíos y ajustar Footer en App**
+- [ ] **Step 6: Render both branches and remove the fictitious footer credit**
 
-In `src/App.tsx`, replace the unconditional testimonial render with:
+Change `FooterProps` to:
+
+```ts
+type FooterProps = {
+  business: SiteConfig["business"];
+  contact: SiteConfig["contact"];
+  links: InternalLink[];
+};
+```
+
+Change the function signature to:
+
+```ts
+export function Footer({ business, contact, links }: FooterProps) {
+```
+
+Replace the single address and global schedule with:
 
 ```tsx
-{testimonials.length > 0 ? (
-  <Testimonials testimonials={testimonials} section={siteConfig.sections.testimonials} />
-) : null}
+<div className="space-y-5">
+  <h2 className="text-sm font-bold uppercase text-parchment">Visitanos</h2>
+  {contact.branches.map((branch) => (
+    <div key={branch.id} className="space-y-2 border-b border-cream/10 pb-4 last:border-0">
+      <p className="flex gap-2 text-sm leading-6 text-cream/72">
+        <MapPin size={18} className="mt-0.5 shrink-0 text-copper" aria-hidden="true" />
+        <span>
+          <strong className="text-cream">{branch.name}:</strong> {branch.address}
+        </span>
+      </p>
+      {branch.schedule.map((item) => (
+        <p key={item.day} className="flex justify-between gap-3 pl-6 text-xs text-cream/65">
+          <span>{item.day}</span>
+          <span className="text-right text-cream">{item.hours}</span>
+        </p>
+      ))}
+    </div>
+  ))}
+</div>
 ```
 
-Remove `developer={siteConfig.developer}` from `<Footer />`. Keep all other section order unchanged.
+Remove the complete paragraph containing `developer.creditLabel`, `developer.url` and `developer.name`. Keep only the copyright paragraph inside the bottom container.
 
-- [ ] **Step 8: Ejecutar la verificación estructural**
+- [ ] **Step 7: Update `App` for the new props**
+
+Render `Location` as:
+
+```tsx
+<Location
+  contact={siteConfig.contact}
+  ctaLabel={siteConfig.hero.primaryCtaLabel}
+  section={siteConfig.sections.location}
+/>
+```
+
+Render `Footer` as:
+
+```tsx
+<Footer
+  business={siteConfig.business}
+  contact={siteConfig.contact}
+  links={siteConfig.footerLinks}
+/>
+```
+
+Keep `Testimonials` unconditional because Task 3 supplies two verified entries. Keep the section order unchanged.
+
+- [ ] **Step 8: Run the structural green checks**
 
 Run:
 
 ```powershell
 npm run build
-rg -n 'Tu Marca|example\.com|developer:|contact\.address|contact\.mapsUrl|label: "Teléfono"' src
+rg -n 'contact\.address|contact\.mapsUrl|mapsEmbedUrl|mapPlaceholderImage|siteConfig\.schedule|siteConfig\.developer|developer=' src
+rg -n 'whatsappLabel|menuUrl|branches: \[|gpYkqomR3pMLu2CB6|YW5y63X1NykVK8NJ9' src
 ```
 
-Expected: build exitoso; búsqueda sin resultados. `Phone` may remain imported only if the conditional phone item uses it.
+Expected: build exits 0; the first search has no output; the second finds the new contract and both Maps links.
 
-- [ ] **Step 9: Commit**
+- [ ] **Step 9: Commit the branch model**
 
 ```powershell
 git add src/types/index.ts src/config/siteConfig.ts src/components/sections/Location.tsx src/components/sections/Contact.tsx src/components/layout/Footer.tsx src/App.tsx
-git commit -m "feat: support Dorina locations and optional content"
+git commit -m "feat: support Dorina branches and contact links"
 ```
 
 ---
 
-### Task 3: Cargar productos, diferenciales, galería y paleta
+### Task 3: Replace demo content and apply the approved palette
 
 **Files:**
 - Modify: `src/data/products.ts`
@@ -412,14 +516,26 @@ git commit -m "feat: support Dorina locations and optional content"
 - Modify: `src/index.css`
 
 **Interfaces:**
-- Consumes: `Product`, `Benefit`, `GalleryImage`, `Testimonial` y las rutas de imágenes definidas en Task 4.
-- Produces: arrays estáticos respaldados y los nueve tokens RGB aprobados.
+- Consumes: `Product`, `Benefit`, `GalleryImage`, `Testimonial` and image paths created in Task 4.
+- Produces: approved arrays with stable IDs and the nine approved RGB tokens.
 
-- [ ] **Step 1: Reemplazar los productos sin incluir precios**
+- [ ] **Step 1: Capture the demo-content failures**
 
-Set `products` to these six objects:
+Run:
+
+```powershell
+rg -n 'Cold Brew|Cookie de chocolate|Pet friendly|WiFi disponible|Valentina R\.|Martin G\.|Lucia P\.|Santiago M\.' src/data
+```
+
+Expected: matches for unapproved products, benefits and testimonials.
+
+- [ ] **Step 2: Replace `products`**
+
+Set `src/data/products.ts` to:
 
 ```ts
+import type { Product } from "../types";
+
 export const products: Product[] = [
   {
     id: "flat-white",
@@ -431,23 +547,23 @@ export const products: Product[] = [
   {
     id: "avocado-toast",
     name: "Avocado Toast",
-    description: "Tostón de masa madre con palta, huevo poché, tomates cherry, praliné de nueces y lima.",
+    description: "Masa madre, palta, huevo poché, tomates cherry, praliné de nueces y lima.",
     image: "/images/cafe-avocado.jpg",
     imageAlt: "Avocado toast con huevo poché y una taza de café.",
   },
   {
     id: "cheesecake-frutos-rojos",
     name: "Cheesecake de frutos rojos",
-    description: "Porción de cheesecake de frutos rojos, sujeta a disponibilidad.",
+    description: "Una opción de pastelería sujeta a disponibilidad.",
     image: "/images/cheesecake.jpg",
     imageAlt: "Cheesecake de frutos rojos decorado con frutos y flores.",
   },
   {
     id: "croissant-almendras",
     name: "Croissant con almendras",
-    description: "Croissant con almendras de la selección de pastelería artesanal.",
+    description: "Parte de la selección de pastelería artesanal de Dorina.",
     image: "/images/hero-dorina.jpg",
-    imageAlt: "Mesa con platos dulces y salados de Dorina Café.",
+    imageAlt: "Mesa de Dorina Café con platos dulces y salados.",
   },
   {
     id: "brunch-roma",
@@ -466,19 +582,13 @@ export const products: Product[] = [
 ];
 ```
 
-Run:
+- [ ] **Step 3: Replace `benefits`**
 
-```powershell
-rg -n '\$|precio|price' src/data/products.ts
-```
-
-Expected: sin resultados.
-
-- [ ] **Step 2: Reemplazar diferenciales no verificados**
-
-Set `benefits` to:
+Set `src/data/benefits.ts` to:
 
 ```ts
+import type { Benefit } from "../types";
+
 export const benefits: Benefit[] = [
   {
     id: "especialidad",
@@ -507,36 +617,77 @@ export const benefits: Benefit[] = [
 ];
 ```
 
-Do not retain pet-friendly, WiFi or ambience claims from the template.
+- [ ] **Step 4: Replace `galleryImages`**
 
-- [ ] **Step 3: Crear la galería con descripciones fieles**
-
-Set `galleryImages` to:
+Set `src/data/gallery.ts` to:
 
 ```ts
+import type { GalleryImage } from "../types";
+
 export const galleryImages: GalleryImage[] = [
-  { id: "mesa", src: "/images/hero-dorina.jpg", alt: "Mesa de Dorina Café con platos dulces y salados junto a una ventana.", featured: true },
-  { id: "cafe-avocado", src: "/images/cafe-avocado.jpg", alt: "Avocado toast con huevo poché y una taza de café." },
-  { id: "almuerzos", src: "/images/almuerzos.jpg", alt: "Tres platos salados de Dorina Café sobre una mesa de madera." },
-  { id: "cheesecake", src: "/images/cheesecake.jpg", alt: "Cheesecake de frutos rojos decorado con frutos y flores.", featured: true },
-  { id: "brunch", src: "/images/mesa-brunch.jpg", alt: "Mesa con mbejú, tostado y porciones de torta." },
-  { id: "croissant-salado", src: "/images/croissant-salado.jpg", alt: "Croissant salado con jamón y queso fundido." },
+  {
+    id: "mesa",
+    src: "/images/hero-dorina.jpg",
+    alt: "Mesa de Dorina Café con platos dulces y salados.",
+    featured: true,
+  },
+  {
+    id: "cafe-avocado",
+    src: "/images/cafe-avocado.jpg",
+    alt: "Avocado toast con huevo poché y una taza de café.",
+  },
+  {
+    id: "almuerzos",
+    src: "/images/almuerzos.jpg",
+    alt: "Tres platos salados de Dorina Café sobre una mesa de madera.",
+  },
+  {
+    id: "cheesecake",
+    src: "/images/cheesecake.jpg",
+    alt: "Cheesecake de frutos rojos decorado con frutos y flores.",
+    featured: true,
+  },
+  {
+    id: "brunch",
+    src: "/images/mesa-brunch.jpg",
+    alt: "Mesa con mbejú, tostado y porciones de torta.",
+  },
+  {
+    id: "croissant-salado",
+    src: "/images/croissant-salado.jpg",
+    alt: "Croissant salado con jamón y queso fundido.",
+  },
 ];
 ```
 
-- [ ] **Step 4: Eliminar los testimonios ficticios**
+- [ ] **Step 5: Replace fictitious testimonials with attributed paraphrases**
 
-Replace the export in `src/data/testimonials.ts` with:
+Set `src/data/testimonials.ts` to:
 
 ```ts
 import type { Testimonial } from "../types";
 
-export const testimonials: Testimonial[] = [];
+export const testimonials: Testimonial[] = [
+  {
+    id: "carolina-blanco",
+    name: "Carolina Blanco",
+    rating: 5,
+    comment: "Destacó las medialunas, el chocolate caliente, la variedad y la atención.",
+    detail: "Villa Urquiza · Google Maps",
+  },
+  {
+    id: "nicolas-guichot",
+    name: "Nicolas Guichot",
+    rating: 5,
+    comment: "Destacó el ambiente acogedor, cálido y tranquilo, y las porciones abundantes.",
+    detail: "Palermo · Google Maps",
+  },
+];
 ```
 
-- [ ] **Step 5: Aplicar los nueve tokens RGB aprobados**
+- [ ] **Step 6: Apply the nine RGB tokens**
 
-In `src/index.css`, keep all selectors and replace only the `:root` values:
+Replace only the values inside `:root` in `src/index.css`:
 
 ```css
 :root {
@@ -552,27 +703,28 @@ In `src/index.css`, keep all selectors and replace only the `:root` values:
 }
 ```
 
-- [ ] **Step 6: Build y búsqueda de afirmaciones heredadas**
+- [ ] **Step 7: Run the content green checks**
 
 Run:
 
 ```powershell
 npm run build
-rg -n 'Café Nómada|Cafe Nomada|@cafenomada|Pet friendly|WiFi disponible|Cliente frecuente|Trabajo remoto|\$[0-9]' src
+rg -n 'Cold Brew|Cookie de chocolate|Pet friendly|WiFi disponible|Valentina R\.|Martin G\.|Lucia P\.|Santiago M\.|\$[0-9]|price|precio' src/data
+rg -n 'Carolina Blanco|Nicolas Guichot|Brunch Roma|Limonada casera|Croissant con almendras' src/data
 ```
 
-Expected: build exitoso y búsqueda sin resultados.
+Expected: build exits 0; the first search has no output; the second finds all approved content.
 
-- [ ] **Step 7: Commit**
+- [ ] **Step 8: Commit content and palette**
 
 ```powershell
 git add src/data/products.ts src/data/benefits.ts src/data/gallery.ts src/data/testimonials.ts src/index.css
-git commit -m "feat: add Dorina menu content and visual palette"
+git commit -m "feat: add approved Dorina content and palette"
 ```
 
 ---
 
-### Task 4: Incorporar imágenes oficiales y registrar procedencia
+### Task 4: Add official images and provenance
 
 **Files:**
 - Create: `public/images/hero-dorina.jpg`
@@ -584,12 +736,12 @@ git commit -m "feat: add Dorina menu content and visual palette"
 - Create: `public/images/SOURCES.md`
 
 **Interfaces:**
-- Consumes: inventario `pageAssets` de `https://www.instagram.com/dorina.cafe/?hl=es` y la autorización del usuario.
-- Produces: seis JPEG locales, cada uno menor de 100 KB en la muestra investigada, y un registro de fuente/uso/alt.
+- Consumes: official `@dorina.cafe` assets discovered with the Browser `pageAssets` capability.
+- Produces: six local JPEGs referenced by Task 2 and Task 3, plus a source manifest.
 
-- [ ] **Step 1: Volver a inventariar los recursos oficiales**
+- [ ] **Step 1: Inventory the official Instagram profile**
 
-Use the Browser `pageAssets` capability on the official Instagram profile. Bundle only the six image assets whose original names are:
+Open `https://www.instagram.com/dorina.cafe/?hl=es` with the Browser skill, call `pageAssets.list()`, and identify these exact original filenames:
 
 ```text
 758377268_17959534125170197_758737748609657417_n.jpg
@@ -600,11 +752,23 @@ Use the Browser `pageAssets` capability on the official Instagram profile. Bundl
 759835256_17960208903170197_5682963381771409039_n.jpg
 ```
 
-Expected: six successful JPEG downloads and zero failures. If one source is unavailable, stop; do not substitute a third-party image.
+Expected: all six filenames are present as `image` assets. Stop if any are absent; do not substitute a third-party image.
 
-- [ ] **Step 2: Copiar y renombrar los binarios según el manifest**
+- [ ] **Step 2: Bundle only the six approved assets**
 
-From the bundle manifest, map original `name` to destination exactly as follows:
+Call `pageAssets.bundle()` with the inventory ID and the six asset IDs corresponding to the filenames above.
+
+Expected summary:
+
+```text
+requestedCount: 6
+downloadedCount: 6
+failedCount: 0
+```
+
+- [ ] **Step 3: Copy and rename the JPEGs**
+
+Use the returned bundle manifest to map original name to final file exactly:
 
 ```text
 758377268_17959534125170197_758737748609657417_n.jpg -> public/images/hero-dorina.jpg
@@ -615,11 +779,11 @@ From the bundle manifest, map original `name` to destination exactly as follows:
 759835256_17960208903170197_5682963381771409039_n.jpg -> public/images/croissant-salado.jpg
 ```
 
-Use `Copy-Item -LiteralPath` for these binary files; do not alter the JPEG bytes.
+Use `Copy-Item -LiteralPath` for each binary. Do not edit or re-encode the JPEG bytes.
 
-- [ ] **Step 3: Escribir el registro de procedencia**
+- [ ] **Step 4: Create the provenance manifest**
 
-Create `public/images/SOURCES.md` with this table:
+Create `public/images/SOURCES.md` with:
 
 ```markdown
 # Fuentes de imágenes
@@ -628,7 +792,7 @@ Uso autorizado por el usuario el 24 de agosto de 2026. Todas las imágenes provi
 
 | Archivo | Publicación oficial | Uso | Texto alternativo |
 |---|---|---|---|
-| `hero-dorina.jpg` | https://www.instagram.com/dorina.cafe/reel/DbLc4xrRCti/ | Hero y galería | Mesa de Dorina Café con platos dulces y salados junto a una ventana. |
+| `hero-dorina.jpg` | https://www.instagram.com/dorina.cafe/reel/DbLc4xrRCti/ | Hero y galería | Mesa de Dorina Café con platos dulces y salados. |
 | `cafe-avocado.jpg` | https://www.instagram.com/dorina.cafe/p/DbeEPiflCPa/ | Flat White, Avocado Toast y galería | Avocado toast con huevo poché y una taza de café. |
 | `almuerzos.jpg` | https://www.instagram.com/dorina.cafe/p/DcEK0w0lnWp/ | Presentación, limonada y galería | Tres platos salados de Dorina Café sobre una mesa de madera. |
 | `cheesecake.jpg` | https://www.instagram.com/dorina.cafe/reel/Dbay61qxk3C/ | Cheesecake y galería | Cheesecake de frutos rojos decorado con frutos y flores. |
@@ -636,38 +800,46 @@ Uso autorizado por el usuario el 24 de agosto de 2026. Todas las imágenes provi
 | `croissant-salado.jpg` | https://www.instagram.com/dorina.cafe/reel/DbYKfVdhRPV/ | Galería | Croissant salado con jamón y queso fundido. |
 ```
 
-- [ ] **Step 4: Verificar dimensiones, peso y referencias**
+- [ ] **Step 5: Verify binaries and references**
 
 Run:
 
 ```powershell
-Get-Item public/images/hero-dorina.jpg, public/images/cafe-avocado.jpg, public/images/almuerzos.jpg, public/images/cheesecake.jpg, public/images/mesa-brunch.jpg, public/images/croissant-salado.jpg | Select-Object Name,Length
+$dorinaImages = @(
+  'public/images/hero-dorina.jpg',
+  'public/images/cafe-avocado.jpg',
+  'public/images/almuerzos.jpg',
+  'public/images/cheesecake.jpg',
+  'public/images/mesa-brunch.jpg',
+  'public/images/croissant-salado.jpg'
+)
+Get-Item -LiteralPath $dorinaImages | Select-Object Name, Length
 rg -n '/images/(hero-dorina|cafe-avocado|almuerzos|cheesecake|mesa-brunch|croissant-salado)\.jpg' src
 npm run build
 ```
 
-Expected: six non-empty JPEG files, every path referenced in `src`, all files below 100 KB unless the current official asset is higher resolution, and build exitoso.
+Expected: six non-empty JPEG files, every final path referenced in `src`, and a successful build.
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 6: Commit official assets**
 
 ```powershell
-git add public/images src/config/siteConfig.ts src/data/products.ts src/data/gallery.ts
+git add public/images
 git commit -m "assets: add authorized Dorina photography"
 ```
 
 ---
 
-### Task 5: Verificación factual, funcional y visual
+### Task 5: Final factual, functional and visual verification
 
 **Files:**
-- Verify: all modified files
-- Modify only if verification exposes an adaptation-caused defect within the authorized scope
+- Verify: all files modified in Tasks 2–4.
+- Modify only if an adaptation-caused defect exists inside the authorized scope.
 
 **Interfaces:**
-- Consumes: complete landing from Tasks 1–4.
-- Produces: successful build, clean source audit, link audit and responsive visual review.
+- Consumes: completed landing and approved design document.
+- Produces: successful build, clean source audit, verified links and responsive visual review.
 
-- [ ] **Step 1: Ejecutar el build final desde cero**
+- [ ] **Step 1: Run the final build**
 
 Run:
 
@@ -675,75 +847,69 @@ Run:
 npm run build
 ```
 
-Expected: exit code 0; TypeScript and Vite complete successfully.
+Expected: exit code 0.
 
-- [ ] **Step 2: Auditar datos ficticios y precios**
-
-Run:
-
-```powershell
-rg -n 'Café Nómada|Cafe Nomada|@cafenomada|Tu Marca|example\.com|Valentina R\.|Martin G\.|Lucia P\.|Santiago M\.|\$[0-9]|price|precio' src public
-```
-
-Expected: sin resultados. Separately inspect every remaining `Palermo` match because Palermo is a real Dorina branch.
-
-- [ ] **Step 3: Auditar enlaces y datos operativos**
+- [ ] **Step 2: Audit fictitious and unapproved content**
 
 Run:
 
 ```powershell
-rg -n '5491130014605|dorina\.cafe|monline\.com\.ar/DorinaCafe|gpYkqomR3pMLu2CB6|YW5y63X1NykVK8NJ9|Nicaragua 4816|Triunvirato 5600|8:30 a 20:00' src
-rg -n 'dorinacafe|2345 6789|Lunes a viernes|Sábados|Domingos' src
+rg -n 'Café Nómada|Cafe Nomada|@cafenomada|Tu Marca|example\.com|Valentina R\.|Martin G\.|Lucia P\.|Santiago M\.|\$[0-9]|price|precio|2345 6789' src public
 ```
 
-Expected: first command finds every approved datum; second command returns no stale values. The `dorinacafe` search must not be satisfied by `dorina.cafe` because the dot is literal in the first pattern.
+Expected: no output.
 
-- [ ] **Step 4: Confirmar que no existan secciones o enlaces vacíos**
+- [ ] **Step 3: Audit approved facts and links**
 
 Run:
 
 ```powershell
-rg -n '#opiniones|<Testimonials|testimonials\.length > 0|developer=' src/App.tsx src/config/siteConfig.ts src/components
+rg -n '5491130014605|dorina\.cafe|monline\.com\.ar/DorinaCafe|gpYkqomR3pMLu2CB6|YW5y63X1NykVK8NJ9|Nicaragua 4816|Triunvirato 5600|8:30 a 20:00|9:30 a 20:00|9:00 a 20:00|Carolina Blanco|Nicolas Guichot' src public/images/SOURCES.md
 ```
 
-Expected: only the conditional `testimonials.length > 0` and the `Testimonials` component definition remain; no navigation to `#opiniones` and no `developer=` prop.
+Expected: every approved datum is found.
 
-- [ ] **Step 5: Iniciar el servidor local para revisión**
+- [ ] **Step 4: Start the local development server**
 
-Run:
+Run and retain the session:
 
 ```powershell
 npm run dev -- --host 127.0.0.1
 ```
 
-Expected: Vite reports `http://127.0.0.1:5173/`; if that port is occupied, record the exact alternate localhost URL printed by Vite. Keep the process running only for the review.
+Expected: Vite prints a local URL such as `http://127.0.0.1:5173/`.
 
-- [ ] **Step 6: Revisar escritorio en 1440 × 900**
+- [ ] **Step 5: Review desktop at 1440 × 900**
 
-Using the Browser skill and its local-web-development guidance:
+Using the Browser skill and the exact Vite URL:
 
-- set the viewport to `1440 × 900`;
-- open the local Vite URL;
-- confirm hero copy, six product cards without prices, four benefits, six gallery images, no testimonials, two branch cards and no developer credit;
-- inspect console logs;
-- verify no horizontal overflow, broken image, malformed crop, low contrast or invisible focus state.
+- set viewport to `1440 × 900`;
+- confirm Dorina hero copy and official hero image;
+- confirm six product cards without prices;
+- confirm four benefits, six gallery images and two attributed reviews;
+- confirm two branch cards with different weekend hours and individual Maps buttons;
+- confirm WhatsApp, Instagram and menu controls;
+- confirm no developer credit or fictitious content;
+- inspect console errors, horizontal overflow, broken images, malformed crops, text contrast and focus visibility.
 
-Expected: no console errors and all checks pass.
+Expected: all checks pass. If the hero crop is visibly unacceptable, choose another already-approved official photo; do not edit `Hero.tsx` or generate an image.
 
-- [ ] **Step 7: Revisar móvil en 390 × 844**
+- [ ] **Step 6: Review mobile at 390 × 844**
 
-Using the same local tab:
+Using the same browser tab:
 
-- set the viewport to `390 × 844`;
-- verify navbar behavior, card stacking, text wrapping, both Maps buttons, WhatsApp/menu/Instagram controls and footer addresses;
+- set viewport to `390 × 844`;
+- open and close the mobile navigation;
+- verify all eight navigation targets;
+- verify card stacking, readable schedules, both Maps buttons and contact actions;
 - tab through interactive elements and confirm visible focus;
-- confirm no horizontal overflow or clipped content.
+- confirm no clipped text, horizontal overflow or distorted imagery.
 
-Expected: no visual or interaction defects.
+Expected: all checks pass.
 
-- [ ] **Step 8: Verificar hrefs sin activar servicios externos**
+- [ ] **Step 7: Verify external hrefs without activating them**
 
-Inspect the rendered DOM and assert these exact hrefs are present:
+Inspect rendered anchors and assert these exact `href` values exist:
 
 ```text
 https://wa.me/5491130014605
@@ -753,28 +919,31 @@ https://maps.app.goo.gl/gpYkqomR3pMLu2CB6
 https://maps.app.goo.gl/YW5y63X1NykVK8NJ9
 ```
 
-Expected: each exact URL appears at least once; do not send a WhatsApp message or perform any external write.
+Do not click WhatsApp or send any message.
 
-- [ ] **Step 9: Corregir solo defectos causados por la adaptación y repetir verificaciones**
+- [ ] **Step 8: Fix only authorized defects and repeat affected checks**
 
-For each defect, edit only the already authorized file responsible, rerun `npm run build`, then repeat the affected viewport check. If a fix requires a new component or route outside the authorized list, stop and ask for scope approval.
+For a defect caused by the adaptation, edit only the responsible file already listed in this plan, rerun `npm run build`, and repeat the affected viewport. If a fix requires another component or build configuration, stop and request scope approval.
 
-- [ ] **Step 10: Commit final de verificación, si hubo correcciones**
+- [ ] **Step 9: Commit verification fixes only when changes exist**
 
 ```powershell
 git add src public/images
 git commit -m "fix: polish Dorina responsive landing"
 ```
 
-If Step 9 made no changes, do not create an empty commit.
+Do not create an empty commit.
 
-- [ ] **Step 11: Preparar la entrega sin publicar**
+- [ ] **Step 10: Confirm repository identity and prepare delivery**
 
 Run:
 
 ```powershell
+git rev-parse --show-toplevel
+git branch --show-current
+git remote -v
 git status --short
-git log -4 --oneline
+git log -5 --oneline
 ```
 
-Expected: worktree limpio and local commits present. Report project path, changed files, build result, viewports, image sources, omitted data and explicit confirmation that no publish or push occurred.
+Expected: root, branch and remotes match Task 1; worktree is clean; no push or deployment occurred.
