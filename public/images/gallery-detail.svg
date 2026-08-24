@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc">
+  <title id="title">Detalle de cafe</title>
+  <desc id="desc">Vajilla artesanal y granos de cafe.</desc>
+  <rect width="1000" height="760" fill="#e8d8bc"/>
+  <circle cx="360" cy="370" r="178" fill="#fff8ec"/>
+  <circle cx="360" cy="370" r="112" fill="#6b442f"/>
+  <path d="M300 354c32-40 90-40 126 0-34 42-92 42-126 0Z" fill="#f4ead8"/>
+  <ellipse cx="675" cy="330" rx="42" ry="28" fill="#2a1b14" transform="rotate(25 675 330)"/>
+  <ellipse cx="730" cy="400" rx="42" ry="28" fill="#2a1b14" transform="rotate(-20 730 400)"/>
+  <ellipse cx="620" cy="455" rx="42" ry="28" fill="#2a1b14" transform="rotate(8 620 455)"/>
+  <path d="M635 300c18 16 44 26 72 28M690 382c22 8 46 8 72-2M585 445c22 14 48 20 78 18" stroke="#6b442f" stroke-width="10" stroke-linecap="round"/>
+</svg>

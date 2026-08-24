@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: 255 248 236;
+  --color-linen: 244 234 216;
+  --color-parchment: 232 216 188;
+  --color-coffee: 107 68 47;
+  --color-espresso: 42 27 20;
+  --color-forest: 23 63 53;
+  --color-sage: 138 161 124;
+  --color-copper: 182 106 60;
+  --color-ink: 37 31 27;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: rgb(var(--color-cream));
+  color: rgb(var(--color-ink));
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgb(var(--color-forest));
+  color: rgb(var(--color-cream));
+}
+
+:focus-visible {
+  outline: 3px solid rgb(var(--color-copper));
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

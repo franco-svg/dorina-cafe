@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Cold brew</title>
+  <desc id="desc">Vaso de cold brew con hielo y tonos frescos.</desc>
+  <rect width="900" height="700" fill="#e8d8bc"/>
+  <ellipse cx="450" cy="552" rx="205" ry="42" fill="#2a1b14" opacity="0.16"/>
+  <path d="M300 160h300l-40 390H340L300 160Z" fill="#fff8ec" opacity="0.86"/>
+  <path d="M332 305h236l-25 245H358l-26-245Z" fill="#6b442f"/>
+  <rect x="365" y="245" width="72" height="72" rx="14" fill="#fff8ec" opacity="0.8"/>
+  <rect x="466" y="238" width="86" height="86" rx="16" fill="#fff8ec" opacity="0.72"/>
+  <path d="M412 125h190" stroke="#173f35" stroke-width="24" stroke-linecap="round"/>
+  <path d="M520 125 635 65" stroke="#173f35" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="265" cy="212" r="42" fill="#8aa17c"/>
+  <circle cx="665" cy="438" r="34" fill="#b66a3c"/>
+</svg>

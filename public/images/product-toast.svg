@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Tostado de masa madre</title>
+  <desc id="desc">Sandwich tostado servido sobre papel artesanal.</desc>
+  <rect width="900" height="700" fill="#e8d8bc"/>
+  <rect x="185" y="185" width="530" height="330" rx="36" fill="#fff8ec" transform="rotate(-4 450 350)"/>
+  <path d="M250 355 518 210l150 270-320 32-98-157Z" fill="#b66a3c"/>
+  <path d="M328 398 520 286l88 148-224 25-56-61Z" fill="#f4ead8"/>
+  <path d="M295 360 520 250M365 455 623 420" stroke="#8f5d39" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="670" cy="205" r="40" fill="#8aa17c"/>
+  <circle cx="720" cy="255" r="28" fill="#8aa17c"/>
+</svg>
