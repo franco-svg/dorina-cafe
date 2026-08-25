@@ -5,7 +5,7 @@ export const products: Product[] = [
     id: "flat-white",
     name: "Flat White",
     description: "Dos shots de espresso con leche emulsionada.",
-    image: "public/images/product-flat-white.svg",
+    image: "/images/product-flat-white.svg",
     imageAlt: "Taza de café junto a un avocado toast.",
   },
   {
@@ -27,7 +27,7 @@ export const products: Product[] = [
     id: "croissant-almendras",
     name: "Croissant con almendras",
     description: "Parte de la selección de pastelería artesanal de Dorina.",
-    image: "public/images/product-croissant.svg",
+    image: "/images/product-croissant.svg",
     imageAlt: "Mesa de Dorina Café con platos dulces y salados.",
   },
   {
@@ -42,7 +42,7 @@ export const products: Product[] = [
     id: "limonada-casera",
     name: "Limonada casera",
     description: "Limonada casera con menta y jengibre.",
-    image: "public/images/product-cold-brew.svg",
+    image: "/images/product-cold-brew.svg",
     imageAlt: "Tres platos salados de Dorina Café sobre una mesa de madera.",
   },
 ];
