@@ -26,4 +26,16 @@ export const benefits: Benefit[] = [
     description:
       "Alternativas vegetarianas, veganas y sin TACC identificadas en la carta.",
   },
+  {
+    id: "wifi",
+    icon: "wifi",
+    title: "WiFi disponible",
+    description: "Conexión estable para trabajar, estudiar o resolver pendientes.",
+  },
+  {
+    id: "ambiente",
+    icon: "armchair",
+    title: "Ambiente tranquilo",
+    description: "Mesas cómodas y una pausa real en la ciudad.",
+  },
 ];
